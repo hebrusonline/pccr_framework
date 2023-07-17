@@ -9,7 +9,7 @@ This project contains the reference implementation for the **P** age
 
 ## Further Material
 
-The following resorces can be accessed (here)[https://pccr-website.web.app/].
+The following resorces can be accessed [here](https://pccr-website.web.app/).
 
 * Manual [en]
 * Benuterhandbuch [de]
