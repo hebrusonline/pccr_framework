@@ -2,15 +2,14 @@
 
 # The PCCR App Framework
 
-The
+<br>
 
-## Project Overview
-
-
+This project contains the reference implementation for the **P** age
+ **C** ube **C** ontent **R** epresentation (PCCR) App Framework.
 
 ## Further Material
 
-The following resorces can be accessed (here)[].
+The following resorces can be accessed (here)[https://pccr-website.web.app/].
 
 * Manual [en]
 * Benuterhandbuch [de]
