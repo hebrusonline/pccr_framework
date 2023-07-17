@@ -1,0 +1,32 @@
+/* Print Documentation */
+@media print {
+  *{
+    background: none;
+    box-sizing: content-box;
+    font-family: "Libre Baskerville", serif;
+  }
+  .navigation.not-searching{
+    display: none;
+  }
+/*
+  .navigation,
+  ::-webkit-scrollbar{
+    display:none;
+  } */
+
+  .main{
+
+    left: 0;
+    display: block; /* Not really needed in all cases */
+    position: relative;
+    width: auto;
+    height: auto;
+    overflow: visible;
+  }
+
+    pre {
+    white-space: pre-line;
+  }
+
+}
+/* Print Documentation */

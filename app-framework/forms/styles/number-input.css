@@ -1,0 +1,39 @@
+/* kss documentation */
+
+// NumberInput
+//
+// The NumberInput offers a field for entering a number. <br>
+// <br>
+// It contains the following information:
+// <br>
+//
+//  element              | description
+//  ---------------------| ---------------
+//  {.form-placeholder} | label for the input number.
+//  {.numberInput}       | the input field.
+//  {.form-description} | contains text describing the desired input value.
+//  {.form-constraints} | contains text describing the constraints for the input field.
+//
+// The outer container has class {.numberBox}.
+//
+//
+// Markup: ./templates/number-input.html
+//
+// Style guide: input.NumberInput
+/* /END/  */
+
+* {}
+
+.numberBox {
+  display: grid;
+  grid-template: [row1-start] "placeholder placeholder placeholder" [row1-end] [row2-start] "numberInput numberInput numberInput" [row2-end] [row3-start] "description constraints constraints" [row3-end];
+  background-color: var(--transparent, var(--not-transparent));
+}
+
+.numberInput {
+  grid-area: numberInput;
+  font-size: 150%;
+  margin: 0.5%;
+  border-radius: 5px;
+  padding: 1%;
+}

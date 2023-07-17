@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "name": "place",
+  "sortBy": "name",
+  "properties": {
+    "language" : {
+      "type" : "string",
+      "name" : "language",
+      "description": "page_language_description",
+      "enum" : ["en", "de"]
+    },
+    "name" : {
+      "type" : "string",
+      "name" : "name",
+      "description": "place_name_description",
+      "minLength": 5,
+      "maxLength": 25
+    },
+    "location": {
+      "type": "object",
+      "name": "location",
+      "form" : "location",
+      "description": "place_location_description",
+      "properties": {
+        "latitude": {
+          "type": "number",
+          "name": "latitude",
+          "description": "latitude_description"
+        },
+        "longitude": {
+          "type": "number",
+          "name": "longitude",
+          "description": "longitude_description"
+        }
+  }
+},
+"text": {
+  "type": "string",
+  "name": "text",
+  "description": "place_text_description",
+  "minLength": 30,
+  "maxLength": 200
+},
+  "layout": {
+    "type": "string",
+    "enum": ["basic"]
+  }
+},
+  "additionalProperties": false,
+  "required": ["layout"]
+}

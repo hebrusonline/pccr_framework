@@ -1,0 +1,119 @@
+/* kss documentation */
+
+// Page Card
+//
+// The PageCard is contains two buttons to perform certain actions:
+//<ul>
+// <li>ADD:     Create a page of the corresponding type.</li>
+// <li>MORE...: Show more options to interact with the corresponding type.</li>
+//</ul>
+//
+// <h1>Data</h1>
+// The data is stored in an object containing all necessary information:
+// <pre id="formOutput" src="../app-framework/cards/data/page-card-doku.json"></pre>
+// The actual strings are pulled from the cards resource file /data/lang.
+//
+// The card possesses fields to display the following information:
+//
+//  element                     | description
+//  ----------------------------| ---------------
+// {.pageSelect-imageContainer} | An icon representing the page type.
+// {.pageSelectContent}         | Content container.
+// {.pageSelect-title}          | The name of the pagetype.
+// {.pageSelect-subtitle}       | Subtitle information.
+// {.pageSelect-text}           | A short description text.
+// {.pageSelect-buttons}        | Button container.
+// {.create-button}             | Button to create a page of the chosen page type.
+// {.more-button}               | Button to show more options.
+//
+// The outer container has class {.page-select}.
+//
+// Markup: ./templates/page-card.html
+//
+// Style Guide: card.PageCard
+/* /END/  */
+
+* {
+}
+
+page-card {
+  background: var(--transparent, lightblue);
+  margin-right: 1%;
+  flex: 0 0 auto;
+}
+
+.template {
+  background: var(--transparent, magenta);
+}
+
+.page-select {
+  background: var(--page-select-color, yellow);
+  border: var(--dev-border, 1px solid);
+  border-radius: 3%;
+  box-shadow: 3px 2px rgba(0, 0, 0, 0.2);
+  padding: 1%;
+  height: 270px;
+  width: 190px;
+  flex: 0 0 auto;
+  position: relative;
+}
+
+.pageSelect-imageContainer {
+  background: var(--transparent, lightblue);
+  height: 25%;
+  text-align: center;
+  padding: 2%;
+}
+
+.pageSelect-image {
+  color: var(--pageSelect-image-color, magenta);
+  background: var(--transparent, var(--not-transparent));
+}
+
+.pageSelectContent {
+  background: var(--transparent, var(--not-transparent));
+}
+
+.pageSelect-title {
+  text-align: center;
+  font-weight: 900;
+  background: var(--transparent, var(--not-transparent));
+  /* background: rgba(1, 0, 0, .5); */
+  font-size: 120%;
+}
+
+.pageSelect-subtitle {
+  color: white;
+  background: gray;
+  border: var(--dev-border, 1px black solid);
+  border-radius: 3%;
+  margin-top: 3%;
+  padding: 1%;
+  text-align: center;
+}
+
+.pageSelect-text {
+  background: var(--transparent, var(--not-transparent));
+  padding: 2%;
+}
+
+.pageSelect-buttons {
+  background: var(--transparent, var(--not-transparent));
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-bottom: 1%;
+}
+
+.pageSelect-buttons>button{
+  margin-right: 1%;
+}
+
+.pageSelect-target {
+  /* background: rgba(150, 150, 150, 50); */
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 1%;
+  height: 25px;
+}

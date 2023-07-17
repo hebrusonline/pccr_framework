@@ -1,0 +1,57 @@
+{
+  "text": {
+    "title": "title",
+    "subtitle": "subtitle",
+    "text": "text",
+    "target": "text",
+    "image": {
+      "alt": "Person Image",
+      "fa-add": "far",
+      "fa-class": "fa-file-alt"
+    }
+  },
+  "object": {
+    "title": "title",
+    "subtitle": "subtitle",
+    "text": "text",
+    "target": "object",
+    "image": {
+      "alt": "Person Image",
+      "fa-add": "fas",
+      "fa-class": "fa-archive"
+    }
+  },
+  "person": {
+    "title": "title",
+    "subtitle": "subtitle",
+    "text": "text",
+    "target": "person",
+    "image": {
+      "alt": "Person Image",
+      "fa-add": "fas",
+      "fa-class": "fa-walking"
+    }
+  },
+  "event": {
+    "title": "title",
+    "subtitle": "subtitle",
+    "text": "text",
+    "target": "event",
+    "image": {
+      "alt": "Person Image",
+      "fa-add": "fas",
+      "fa-class": "fa-calendar-alt"
+    }
+  },
+  "place": {
+    "title": "title",
+    "subtitle": "subtitle",
+    "text": "text",
+    "target": "place",
+    "image": {
+      "alt": "Place Image",
+      "fa-add": "fas",
+      "fa-class": "fa-map-pin"
+    }
+  }
+}

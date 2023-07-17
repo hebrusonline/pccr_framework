@@ -1,0 +1,6 @@
+# Dev Dependency Directories
+node_modules/
+documentation/
+styleguide/
+tests_output/
+chromedriver.log

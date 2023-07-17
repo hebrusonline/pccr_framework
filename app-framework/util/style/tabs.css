@@ -1,0 +1,57 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* tabs general */
+.tab-section {
+  display: none;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.tab-input {
+  display: none;
+}
+
+.tab-label {
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #bbb;
+  border: 1px solid transparent;
+  flex: 0 0 33.3%;
+  height: 10%;
+  order: 2;
+  cursor: pointer;
+}
+
+.tab-label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+.tab-input:checked+.tab-label {
+  color: #555;
+  border: 1px solid #ddd;
+  border-top: 2px solid orange;
+  border-bottom: 1px solid #fff;
+}
+
+/* tab specific */
+/* page preview */
+#result-tabs {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#tab1:checked~#content1,
+#tab2:checked~#content2 ,
+#tab3:checked~#content3{
+  display: block;
+  height: 90%;
+  width: 100%;
+  order: 1;
+  flex: 0 0 100%;
+}

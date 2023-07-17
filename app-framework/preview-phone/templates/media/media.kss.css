@@ -1,0 +1,29 @@
+/* kss documentation */
+// Media Screen
+//
+//<h1>JSONSchema</h1>
+//<pre id="formOutput" src="../app-framework/forms/data/text.schema.json"></pre>
+//
+// Style Guide: screen.Media
+//
+
+// Basic Media Screen
+//
+//
+// <br>
+// The basic 'media' screen contains the following elements:
+// <br>
+//
+//  element                  | description
+// --------------------------| ---------------
+//  {.cube_image_output}     | a container to hold media elements for a cube page.
+//
+// The outer container has class {.screen}
+//
+// Markup: ./templates/media/basic.layout.html
+//
+// Style guide: screen.Media.Basic
+/* /END/  */
+
+* {
+}

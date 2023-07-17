@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "name": "room",
+  "sortBy": "name",
+  "properties": {
+    "name" : {
+      "type" : "string",
+      "name" : "name",
+      "minLength": 5,
+      "maxLength": 15
+    },
+    "size" : {
+      "type" : "number",
+      "name" : "size",
+      "minimum": 5,
+      "maximum": 10
+    },
+    "blocks" : {
+      "type" : "object",
+      "name" : "blocks"
+    },
+    "layout": {
+      "type": "string",
+      "enum": ["indoor", "outdoor"]
+    }
+  },
+  "additionalProperties": false,
+  "required": ["name", "size", "layout"]
+}

@@ -1,0 +1,36 @@
+<div id="app__header">
+  <div id="name" class="name__long">${data.name}</div>
+  <i id="phone-header-icon" class="fas fa-walking"></i>
+</div>
+<div id="app__body">
+  <div class="info_box">
+    <div class="birth-box">
+      <i class="fas fa-star-of-life"></i>
+      <div class="birth-date">
+        ${data.birth_date.date}
+      </div>
+      <div class="anno">
+        ${labels[data.birth_date.anno]}
+      </div>
+    </div>
+    <div class="death-box">
+      <i class="fas fa-skull"></i>
+      <div class="death-date">
+        ${data.death_date.date}
+      </div>
+      <div class="anno">
+        ${labels[data.birth_date.anno]}
+      </div>
+    </div>
+  </div>
+
+  <div class="__array">
+    <div id="keywords" class="keyword_box">
+      <div id="keyword">${itemValue.keyword}</div>
+    </div>
+  </div>
+
+  <div id="text">${data.text}</div>
+
+</div>
+<div id="app__footer"></div>

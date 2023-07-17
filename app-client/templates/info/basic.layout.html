@@ -1,0 +1,27 @@
+<header id="app__header">
+  <div id="logo">
+    <img id="logo-image" src="${data.image.url}" alt="LOGO">
+  </div>
+
+  <div id="caption">${data.caption}</div>
+
+</header>
+<div id="app__body">
+
+  <div id="image">
+    <img id="full-image" src="${data.logo.url}" alt="IMAGE">
+  </div>
+
+  <div id="map">
+    <div id="location">
+      MAP
+      <div id="latitude"> ${data.location.latitude} </div>
+      <div id="longitude"> ${data.location.longitude} </div>
+    </div>
+  </div>
+
+
+  <div id="text" class="text__short">${data.text}</div>
+
+</div>
+<footer id="app__footer"></footer>

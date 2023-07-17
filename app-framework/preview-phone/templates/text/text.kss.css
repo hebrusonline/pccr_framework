@@ -1,0 +1,29 @@
+/* kss documentation */
+// Text Screen
+//
+//<h1>JSONSchema</h1>
+//<pre id="formOutput" src="../app-framework/forms/data/text.schema.json"></pre>
+//
+// Style Guide: screen.Text
+//
+
+// Basic Text Screen
+//
+// <br>
+// The basic 'text' screen contains the following elements:
+// <br>
+//
+//  element                  | description
+// --------------------------| ---------------
+//  {#name}                  | the page title.
+//  {#text}                  | the page text.
+//
+// The outer container has class {.screen}
+//
+// Markup: ./templates/text/basic.layout.html
+//
+// Style guide: screen.Text.Basic
+/* /END/  */
+
+* {
+}

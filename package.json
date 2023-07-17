@@ -1,0 +1,42 @@
+{
+  "name": "pccr_framework",
+  "version": "1.0.0",
+  "description": "This is the mobile app framework.",
+  "main": "login.js",
+  "scripts": {
+    "test": "echo \"Using Jasmine: check /test folder\" && exit 1",
+    "e2e": "node test/nightwatch.js test/e2e.js",
+    "jsdoc": "node_modules/.bin/jsdoc -c jsdoc.json",
+    "kss": "node_modules/.bin/kss --config kss.json",
+    "postinstall": "cd app-client && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hebrusonline/pccr_login.git"
+  },
+  "keywords": [
+    "mobile",
+    "app",
+    "framework",
+    "javascript"
+  ],
+  "author": "hebrus",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/hebrusonline/pccr_login/issues"
+  },
+  "homepage": "https://github.com/hebrusonline/pccr_login#readme",
+  "devDependencies": {
+    "@pixi/jsdoc-template": "^2.6.0",
+    "chromedriver": "^83.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.11.0",
+    "jsdoc": "^3.6.4",
+    "kss": "^3.0.1",
+    "niepsuj-kss-template": "^1.1.6",
+    "nightwatch": "^1.3.5"
+  },
+  "dependencies": {
+    "npm": "^6.14.5"
+  }
+}

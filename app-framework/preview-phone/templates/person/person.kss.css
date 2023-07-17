@@ -1,0 +1,73 @@
+/* kss documentation */
+// Person Screen
+//
+//<h1>JSONSchema</h1>
+//<pre id="formOutput" src="../app-framework/forms/data/person.schema.json"></pre>
+//
+// Style Guide: screen.Person
+//
+
+// Basic Person Screen
+//
+// <br>
+// The basic 'person' screen contains the following elements:
+// <br>
+//
+//  element                  | description
+// --------------------------| ---------------
+//  {#name}                  | the title of the page.
+//  {#infobox}               | the container for the oblect information.
+//  {.date}                  | an date container.
+//  {#artist}                | the object's artist.
+//  {#birth_date}            | the persons's birth date.
+//  {#anno_birth}            | the persons's birth date's bc/ad modifider.
+//  {#death_date}            | the persons's death date.
+//  {#anno_death}            | the persons's death date's bc/ad modifider.
+//  {.__array}               | an array to contain multiple elements.
+//  {#keywords}              | the container for keywords.
+//  {#keyword}               | a keywords.
+//  {#text}                  | the object's text.
+//
+// The outer container has class {.screen}
+//
+// Markup: ./templates/person/basic.layout.html
+//
+// Style guide: screen.Person.Basic
+/* /END/  */
+
+* {
+}
+
+// Image Person Screen
+//
+//The 'event' screen element consits of header body and footer. <br>
+// <br>
+// It contains the following elements:
+// <br>
+//
+//  element                  | description
+// --------------------------| ---------------
+//  {#name}                  | the title of the page.
+//  {#image}                 | the container for the page image.
+//  {#full-image}            | the page image.
+//  {#infobox}               | the container for the oblect information.
+//  {.date}                  | an date container.
+//  {#artist}                | the object's artist.
+//  {#birth_date}            | the persons's birth date.
+//  {#anno_birth}            | the persons's birth date's bc/ad modifider.
+//  {#death_date}            | the persons's death date.
+//  {#anno_death}            | the persons's death date's bc/ad modifider.
+//  {.__array}               | an array to contain multiple elements.
+//  {#keywords}              | the container for keywords.
+//  {#keyword}               | a keywords.
+//  {#text}                  | the object's text.
+//
+// The outer container has class {.screen}
+//
+// Markup: ./templates/person/image.layout.html
+//
+// Style guide: screen.Person.Image
+/* /END/  */
+
+* {
+}

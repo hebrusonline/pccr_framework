@@ -1,0 +1,86 @@
+{
+  "info" : {
+    "mod" : "fas",
+    "id"  :"fa-info"
+  },
+  "hours" : {
+    "mod" : "far",
+    "id"  :"fa-clock"
+  },
+  "time" : {
+    "mod" : "fas",
+    "id"  :"fa-clock"
+  },
+  "text" : {
+    "mod" : "far",
+    "id"  :"fa-file-alt"
+  },
+  "object" : {
+    "mod" : "fas",
+    "id"  :"fa-archive"
+  },
+  "person" : {
+    "mod" : "fas",
+    "id"  :"fa-walking"
+  },
+  "event" : {
+    "mod" : "far",
+    "id"  :"fa-calendar-alt"
+  },
+  "place" : {
+    "mod" : "fas",
+    "id"  :"fa-map-pin"
+  },
+  "img" : {
+    "mod" : "far",
+    "id"  :"fa-image"
+  },
+  "date" : {
+    "mod" : "far",
+    "id" : "fa-calendar-alt"
+  },
+  "size" : {
+    "mod" : "fas",
+    "id" : "fa-ruler-combined"
+  },
+  "location" : {
+    "mod" : "fas",
+    "id" : "fa-map-pin"
+  },
+"room" : {
+    "mod" : "fas",
+    "id" : "fa-map-marked-alt"
+},
+  "appmeta" :{
+    "mod" : "fas",
+    "id" : "fa-asterisk"
+  },
+  "admission" :{
+    "mod" : "fas",
+    "id" : "fa-money-bill-wave"
+  },
+  "rate" :{
+    "mod" : "fas",
+    "id" : "fa-coins"
+  },
+  "quiz" :{
+    "mod" : "fas",
+    "id" : "fa-question"
+  },
+  "question" :{
+    "mod" : "fas",
+    "id" : "fa-question"
+  },
+  "top" : {
+  "mod": "fas",
+  "id" :"fa-chevron-up"
+  },
+  "bottom" : {
+    "mod": "fas",
+    "id" :"fa-chevron-down"
+  },
+  "behind" : {
+    "mod": "fas",
+    "id" :"fa-redo"
+  }
+}

@@ -1,0 +1,50 @@
+/* kss documentation */
+// Room Screen
+//
+//<h1>JSONSchema</h1>
+//<pre id="formOutput" src="../app-framework/forms/data/room.schema.json"></pre>
+//
+// Style Guide: screen.Room
+//
+
+// Indoor Room Screen
+//
+// <br>
+// The indoor 'room' screen contains the following elements:
+// <br>
+//
+//  element                  | description
+// --------------------------| ---------------
+//  {#name}                  | the page title.
+//  {.blocks}                | the area whre the room blocks are to be rendered.
+//
+// The outer container has class {.screen}
+//
+// Markup: ./templates/room/indoor.layout.html
+//
+// Style guide: screen.Room.Indoor
+/* /END/  */
+
+* {
+}
+
+// Outdoor Room Screen
+//
+// <br>
+// The outdoor 'room' screen contains the following elements:
+// <br>
+//
+//  element                  | description
+// --------------------------| ---------------
+//  {#name}                  | the page title.
+//  {.blocks}                | the area whre the room blocks are to be rendered.
+//
+// The outer container has class {.screen}
+//
+// Markup: ./templates/room/outdoor.layout.html
+//
+// Style guide: screen.Room.Outdoor
+/* /END/  */
+
+* {
+}

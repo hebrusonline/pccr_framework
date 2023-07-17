@@ -1,0 +1,244 @@
+{
+  "types": {
+    "object_type": "Objekt",
+    "text_type": "Text",
+    "info_type": "Info",
+    "hours_type": "Öffnungszeiten",
+    "person_type" : "Person",
+    "event_type" : "Ereignis",
+    "admission_type": "Eintritt",
+    "quiz_type": "Quiz",
+    "question_type": "Frage",
+    "appmeta_type" : "App Meta-Information"
+  },
+  "object": {
+    "object_name_description": "Der Name des Objekts.",
+    "object_text_description": "Ein Text der das Objekt beschreibt."
+  },
+  "person": {
+    "person_name_description": "Der Name der Person.",
+    "person_text_description": "Ein Text, der die Person beschreibt.",
+    "birth_date_description_0": "Das Geburtsdatum der Person.",
+    "birth_date_description_1": "Das Geburtsjahr der Person.",
+    "birth_date_description_2": "Das Geburtsdatum der Person.",
+    "death_date_description_0": "Das Sterbedatum der Person.",
+    "death_date_description_1": "Das Sterbejahr der Person.",
+    "death_date_description_2": "Das Sterbedatum der Person.",
+    "person_keyword_description": "Ein Schlagwort der Person."
+  },
+  "event": {
+    "event_name_description": "Der Name des Ereignisses.",
+    "event_text_description": "Ein Text der das Ereignis beschreibt.",
+    "start_date_description" : "Das Datum, an dem das Ereignis begonnen hat.",
+    "end_date_description" : "Das Datum, an dem das Ereignis geendet hat.",
+    "event_location_description" : "Der Ort, an dem sich das Ereignis abgespielt hat.",
+    "event_keyword_description" : "Ein Schlagwort des Ereignisses.",
+    "event_text_description" : "Ein Text, der das Ereignis beschreibt."
+  },
+  "text": {
+    "text_name_description" : "Eine Überschrift.",
+    "text_text_description" : "Ein Text."
+  },
+  "place": {
+    "place_name_description": "Der Name des Ortes.",
+    "place_location_description" : "Die Position des Ortes.",
+    "place_text_description": "Ein Text, der den Ort beschreibt.",
+    "event_location_description" : "Der Ort, an dem das Ereignis stattgefunden hat."
+  },
+  "info": {
+    "info_caption_description": "Die Seitenüberschrift für die Info Seite.",
+    "info_logo_description": "Ein Logo für die Seite (am besten Quadratisch!).",
+    "info_image_description": "Ein Bild für die Seite.",
+    "info_location_description" : "Die Position des Museums.",
+    "info_text_description": "Eine kurze Beschreibung für die Info Seite."
+  },
+  "hours": {
+    "hours_caption_description": "Die Seitenüberschrift.",
+    "opening_time_description": "Die Öffnungszeit.",
+    "closing_time_description": "Das Ende der Öffnungszeit."
+  },
+  "admission": {
+    "admission_caption_description": "Die Seitenüberschrift.",
+    "rate_name_description": "Personengruppe (z.B. Kinder, Erwachsene, etc.).",
+    "rate_amount_description": "Der Preis für diese Gruppe.",
+    "rate_currency_description": "Die Währung."
+  },
+  "appmeta":{
+    "appmeta_name_description" : "Der Titel der App.",
+    "appmeta_audience_description" : "Die Zielgruppe der App.",
+    "appmeta_content_description" : "Der Inhalt der App.",
+    "appmeta_text_description" : "Die Beschreibung der App.",
+    "appmeta_language_description" : "Die Sprache der App.",
+    "appmeta_colour_description" : "Das Farbschema der App."
+  },
+  "quiz": {
+    "quiz_question_description": "Geben Sie eine Quizfrage ein.",
+    "quiz_right_description": "Geben Sie die richtige Antwort ein.",
+    "quiz_false_description": "Geben Sie eine falsche Antwort ein."
+  },
+  "weekdays": {
+    "monday": "Montag",
+    "tuesday": "Dienstag",
+    "wednesday": "Mittwoch",
+    "thursday": "Donnerstag",
+    "friday": "Freitag",
+    "saturday": "Samstag",
+    "sunday": "Sonntag"
+  },
+  "labels": {
+    "confirm_meta_entry" : "Sind Sie sicher? Diese Eingaben können später nicht verändert werden.",
+    "confirm_cube_entry" : "Sind Sie sicher? Diese Eingaben können später nicht verändert werden.",
+    "alert_app_success" : "Die App wurde erfolgreich erstellt. Begeben Sie sich zum aktivieren in die App Übersicht.",
+    "alertErrorSubmission" : "Fehler im Formular! Details im 'Code'-Reiter!",
+    "alertErrorAppSubmission" : "Überprüfen Sie die eingegebenen Nummern!",
+    "error_entry" : "Es ist ein Fehler aufgetreten! Bitte überprüfen Sie Ihre Eingaben.",
+    "activity_weekday" : "Aktivität nach Wochentag",
+    "activity_hour" : "Aktivität nach Stunde",
+    "activity_type" : "Aktivität nach Seitentyp",
+    "activity_page" : "Aktivität nach Seite",
+    "activity" : "Aktivität",
+    "name": "Name",
+    "audience": "Zielgruppe",
+    "caption": "Überschrift",
+    "content": "Inhalt",
+    "language": "Sprache",
+    "location": "Ort",
+    "opening_time": "Öffnungszeit",
+    "closing_time": "Ende der Öffnungszeit",
+    "closed": "An diesem Wochentag geschlossen?",
+    "rate": "Preis",
+    "amount": "Betrag",
+    "choose" : "Bitte auswählen:",
+    "currency": "Währung",
+    "creation_date": "Erstellungszeit",
+    "century": ". Jhd. ",
+    "artist": "Künstler",
+    "anno": "Jahreszählung",
+    "anno_start": "Jahreszählung",
+    "anno_end": "Jahreszählung",
+    "anno_birth": "Jahreszählung",
+    "anno_death": "Jahreszählung",
+    "era": "Ära",
+    "size": "Größe",
+    "measure": "Maß",
+    "unit": "Einheit",
+    "//": "===================================================================",
+    "first_name": "Vorname",
+    "last_name": "Nachname",
+    "text": "Text",
+    "colour": "Farbschema",
+
+    "keywords" : "Schlagwörter",
+    "keyword" : "Schlagwort",
+    "birth_date": "Geburtsdatum",
+    "death_date": "Sterbedatum",
+
+    "start_date": "Datum Beginn",
+    "end_date": "Datum Ende",
+    "location_name" : "Ort des Geschehens",
+
+    "image" : "Bild",
+    "image_path" : "Bildpfad",
+    "logo" : "Logo",
+    "cooseFile" : "Wählen Sie eine Datei ...",
+    "add" : "Hinzufügen",
+    "commit" : "Speichern",
+    "commitChanges": "Änderungen Speichern",
+
+    "question": "Frage",
+    "right": "Richtige Antwort",
+    "false_1": "Erste falsche Antwort",
+    "false_2": "Zweite falsche Antwort",
+    "false_3": "Dritte falsche Antwort",
+
+    "de" : "deutsch",
+    "en" : "englisch",
+    "AD" : "n.Chr.",
+    "BC" : "v.Chr.",
+    "EMPTY" : "n/a",
+    "mm" : "mm",
+    "cm" : "cm",
+    "m" : "m",
+    "in" : "in",
+    "€" : "€",
+    "$" : "$",
+    "£" : "£",
+    "Kč" : "Kč",
+
+    "adults" : "Erwachsene",
+    "children" : "Kinder",
+    "students" : "Schüler",
+    "general" : "Allgemein",
+
+    "explore" : "Entdecken",
+    "guide" : "Führung",
+
+    "gray" : "grau",
+    "orange" : "orange",
+    "blue" : "blau",
+    "green" : "grün",
+
+    "commitCube" : "CUBE Speichern",
+
+    "enable" : "Aktivieren",
+    "disable": "Deaktivieren",
+    "preview": "Vorschau",
+    "change": "Ändern",
+    "delete": "ENTFERNEN",
+    "btnConfirmDeleteApp" : "Ja, App löschen.",
+    "btnCancelDeleteApp" : "Nein, App behalten.",
+
+
+    "date_tab_label_0" : "Exakt",
+    "date_tab_label_1" : "Zeitraum",
+    "date_tab_label_2" : "Freitext",
+    "first_quarter" : "Erstes",
+    "second_quarter" : "Zweites",
+    "third_quarter" : "Drittes",
+    "fourth_quarter" : "Viertes",
+    "first_third" : "Erstes",
+    "second_third" : "Zweites",
+    "third_third" : "Drittes",
+    "first_half" : "Erste",
+    "second_half" : "Zweite",
+    "date_year_only": "Nur Jahr",
+    "date_century" : "Nur Jahrhundert",
+    "quarter" : "Viertel",
+    "third": "Drittel",
+    "half": "Hälfte",
+    "modifier": "Modifikation",
+
+    "total" : "Gesamt",
+    "unique" : "Einzigartig"
+  },
+  "descriptions": {
+    "creation_date_description_0": "Das Erstellungsdatum.",
+    "creation_date_description_1": "Das Erstellungsjahr.",
+    "creation_date_description_2": "Das Erstellungsdatum.",
+    "anno_description": "Datum: \"vor Christi Geburt\" oder  \"nach Christi Geburt\"?",
+    "//": "===================================================================",
+
+    "page_language_description" : "Die Sprache der Seite.",
+
+    "closed_description": "An diesem Wochentag geschlossen?",
+    "image_path_description" : "Der Pfad der Bilddatei.",
+    "image_name_description" : "Der Bildname.",
+    "artist_description" : "Der Künstler/Hersteller, der das Objekt geschaffen hat.",
+    "era_description" : "Die Ära, der das Objekt zugeordnet wird.",
+    "measure_description" : "Das Maß des Objekts.",
+    "unit_description" : "Die dem Maß zugehörige Einheit."
+  },
+  "constraints": {
+    "text_constraints": "Geben Sie einen {type} Wert zwischen {min} und {max} Zeichen ein!",
+    "string_constraints": "Geben Sie einen {type} Wert zwischen {min} und {max} Zeichen ein!",
+    "number_constraints": "Geben Sie einen {type} Wert zwischen {min} und {max} ein!",
+    "date_constraints_0": "Wählen Sie ein Datum aus.",
+    "date_constraints_1": "Geben Sie eine Jahreszahl ein und wählen Sie unten den entsprechenden Zeitraum aus.",
+    "date_constraints_2": "Geben Sie eine freies Datum ein (sollte möglichst vermieden werden).",
+    "enum_constraints": "Wählen Sie einen Wert aus der Liste aus.",
+    "file_constraints": "Wählen Sie ein Bild im JPEG oder PNG mit einer maximalen Größe von {size} MB.",
+    "location_constraints": "Wählen Sie einen Ort aus (Ziehen Sie den Pin).",
+    "time_constraints": "Wählen Sie eine Zeit.",
+    "boolean_constraints": "Benutzen Sie das Kontrollkästchen."
+  }
+}

@@ -1,0 +1,95 @@
+/* kss documentation */
+
+// DateInput
+//
+// The DateInput offers a field for entering a date. <br>
+// Because of the specific domain demands, which may not be able to provide an 'exact' date conforming to the DD-MM-YYYY format,
+// additional input options are being provided. The 'range' tab provieds the creator with the option to select different fractions
+// popularily used within the domain. Additionally, a modifyer can be added to only disply the year or to reduce the presented year to its century.
+// If none of these options are applicable, a 'free' input is possible, however heavily discouraged!
+// <br>
+// It contains the following elements:
+// <br>
+//  elemet              | description
+// ---------------------| ---------------
+//  {.form-placeholder} | label for the input text.
+//  {.dateInput}         | the input field.
+//  {.form-description} | contains text describing the desired input value.
+//  {.form-constraints} | contains text describing the constraints for the input field.
+//
+// The outer container has class {.dateBox}
+//
+// Markup: ./templates/date-input.html
+//
+// Style Guide: input.DateInput
+/* /END/  */
+
+* {}
+
+.dateBox {
+  display: grid;
+  grid-template: [row1-start] "placeholder placeholder placeholder" [row1-end] [row2-start] "dateInput dateInput dateInput" [row2-end] [row3-start] "description constraints constraints" [row3-end];
+  background-color: var(--transparent, var(--not-transparent));
+}
+
+.dateInput {
+  grid-area: dateInput;
+  font-size: 150%;
+  margin: 0.5%;
+  border-radius: 10px;
+  padding: 1%;
+  color: black !important;
+}
+
+.date_mod_header{
+  font-weight: 900;
+}
+
+.date_tabs {
+  position: relative;
+   min-height: 350px;
+
+  clear: both;
+  margin: 35px 0 25px;
+  background: white;
+}
+
+.date_tab {
+  float: left;
+
+}
+.date_tab>label {
+  background: #eee;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-left: -1px;
+  position: relative;
+  left: 1px;
+  top: -29px;
+  -webkit-transition: background-color .17s linear;
+}
+.date_tab>[type=radio] {
+  display: none;
+}
+.date_content {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  background: white;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+}
+.tab_radio:checked ~ label {
+  background: white;
+  border-bottom: 1px solid white;
+  z-index: 2;
+}
+.tab_radio:checked ~ label ~ .date_content {
+  z-index: 1;
+  opacity: 1;
+}

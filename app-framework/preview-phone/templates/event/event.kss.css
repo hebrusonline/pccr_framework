@@ -1,0 +1,37 @@
+/* kss documentation */
+// Event Screen
+//
+//<h1>JSONSchema</h1>
+//<pre id="formOutput" src="../app-framework/forms/data/event.schema.json"></pre>
+//
+// Style Guide: screen.Event
+//
+
+// Basic Event Screen
+//
+//<h1>JSONSchema</h1>
+//<pre id="formOutput" src="../app-framework/forms/data/event.schema.json"></pre>
+//
+// <br>
+// The basic 'event' screen contains the following elements:
+// <br>
+//
+//  element                  | description
+// --------------------------| ---------------
+//  {#name}                  | the name of the event.
+//  {.date}                  | a date container for the start date.
+//  {#start_date}            | the start date.
+//  {#anno_start}            | the start date bc/ad modifier.
+//  {.date}                  | a date container for the end date.
+//  {#end_date}              | the end date.
+//  {#anno_end}              | the end date bc/ad modifier.
+//
+// The outer container has class {.screen}
+//
+// Markup: ./templates/event/basic.layout.html
+//
+// Style guide: screen.Event.Basic
+/* /END/  */
+
+* {
+}

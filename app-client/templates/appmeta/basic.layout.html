@@ -1,0 +1,43 @@
+<header id="app__header">
+  <div id="caption">${data.caption}</div>
+</header>
+
+<div id="app__body">
+  <div id="image">
+    <img id="full-image" src="${data.image.url}" alt="IMAGE">
+  </div>
+  <div id="info-box">
+    <div id="language" class="meta-token">
+      <img src="assets/${data.language}.png" alt="${data.language}"></div>
+    <div id="audience" class="meta-token">
+      <i class="${icons[data.audience][0]} ${icons[data.audience][1]}"></i>
+
+    </div>
+  </div>
+  <div id="content-box" content="${data.content}">
+    <div id="content-guide">
+      <button id="btn__start-tour" class="btn" onclick="startTour()">${labels.startTour}</button>
+      <button id="btn__resume-tour" class="btn hidden" onclick="resumeTour()">${labels.resumeTour}</button>
+    </div>
+    <div id="content-explore">
+      <div id="invalid-number" class="hidden">
+        ${labels.invalid_number}
+      </div>
+      <input id="inp__explore" type="number">
+      <button id="btn__explore" class="btn" onclick="explorePage()">${labels.explore}</button>
+    </div>
+  </div>
+</div>
+
+<footer id="app__footer">
+  <div class="nav__icon" onclick="displayPage('info', appData.basic.info)">
+    <i class="fas fa-info fa-fw"></i>
+  </div>
+  <div class="nav__icon" onclick="displayPage('hours', appData.basic.hours)">
+    <i class="far fa-clock fa-fw"></i>
+  </div>
+  <div class="nav__icon" onclick="displayPage('admission', appData.basic.admission)">
+    <i class="fas fa-euro-sign fa-fw"></i>
+  </div>
+
+</footer>

@@ -1,0 +1,90 @@
+* {
+  /* background-color: cyan; */
+  background-color: rgb(240, 240, 240);
+}
+
+:root {
+  /* PAGE GENERAL */
+  --header-colour: white;
+  --footer-colour: white;
+  --default-colour: red;
+  /* /PAGE GENERAL */
+  /*  */
+  --header-size: 15%;
+  --footer-size: 15%;
+  --body-size: calc(100% - var(--header-size) - var(--footer-size));
+  /*  */
+  --theme-font: "Arial", Times, sans-serif;
+  --theme-font: Consolas, monaco, monospace;
+  /*  */
+  --top-back-color: cyan;
+  --body-back-color: magenta;
+  --bot-back-color: blue;
+  --side-back-color: red;
+  --side-head-color: yellow;
+  /*  */
+  --big-text-color: yellow;
+  --medium-text-color: crimson;
+  --small-text-color: black;
+  /*  */
+  --title-text-color: lime;
+  --article-text-color: turquoise;
+  --note-text-color: orangered;
+  /*  */
+  --page-select-color: white;
+  --pageSelect-image-color: gray;
+  /*  */
+  --tile-icon-color: lightgray;
+  /*  */
+  /* dev */
+  /* --dev-border: 1px dotted; */
+  --transparent: rgba(0, 0, 0, 0);
+  /* dev */
+  --not-transparent: cyan;
+
+  --listscreen-margin: -50px;
+}
+
+/* general */
+html,
+body {
+  height: 100%;
+  min-width: 600px;
+  width: 100%;
+  max-height: 100%;
+  min-height: 740px;
+  margin: 0;
+  position: absolute;
+  box-sizing: border-box;
+}
+
+/* hidden utility class*/
+.hidden {
+  /* stops animations! */
+  /* display: none !important; */
+  position: absolute !important;
+  top: 100%;
+  visibility: hidden !important;
+}
+
+.inactiveBtn {
+  color: lightgray;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* /scrollbar */

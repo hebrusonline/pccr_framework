@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "name": "BASIC",
+  "sortBy": "caption",
+  "properties": {
+    "language" : {
+      "type" : "string",
+      "name" : "language",
+      "description": "page_language_description",
+      "enum" : ["en", "de"]
+    },
+    "caption" : {
+      "type" : "string",
+      "name" : "caption",
+      "description": "caption_description",
+      "minLength": 5,
+      "maxLength": 25
+    },
+
+    "//" : "insert more properties HERE",
+
+    "layout": {
+      "type": "string",
+      "enum": ["basic"]
+    }
+  },
+  "additionalProperties": false,
+  "required": ["layout"]
+}

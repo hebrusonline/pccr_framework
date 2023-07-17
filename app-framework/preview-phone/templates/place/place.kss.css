@@ -1,0 +1,32 @@
+/* kss documentation */
+// Place Screen
+//
+//<h1>JSONSchema</h1>
+//<pre id="formOutput" src="../app-framework/forms/data/place.schema.json"></pre>
+//
+// Style Guide: screen.Place
+//
+
+// Basic Place Screen
+//
+// <br>
+// The basic 'place' screen contains the following elements:
+// <br>
+//
+//  element                  | description
+// --------------------------| ---------------
+//  {#name}                  | the page title.
+//  {#map}                   | the container for the location, gets replaced by a Google Maps element.
+//  {#latitude}              | the latitude of the location.
+//  {#longitude}             | the longitude of the location.
+//  {#text}                  | the place's text.
+//
+// The outer container has class {.screen}
+//
+// Markup: ./templates/place/basic.layout.html
+//
+// Style guide: screen.Place.Basic
+/* /END/  */
+
+* {
+}

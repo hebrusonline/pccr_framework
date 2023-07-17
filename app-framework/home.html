@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>App Framework</title>
+  <link rel="icon" href="favicon.ico">
+
+  <!-- EXTERNAL ASSETS -->
+  <!-- load fontawesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <!-- GOOGLE firebase - check initial login state -->
+  <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+  <!-- GOOGLE charts -->
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <!-- json schema validator -->
+  <script src="util/dependency/json/ajv.min.js"></script>
+  <!-- /EXTERNAL ASSETS -->
+  <!-- ===================================================================== -->
+    <!-- INITIALIZE PAGE -->
+  <script src="onload.js"></script>
+  <script src="util/scripts/data.util.js"></script>
+  <!-- handle login state -->
+  <script src="login.js"></script>
+  
+  
+
+
+  <!-- define preview phone class -->
+  <script src="preview-phone/preview-phone.class.js"></script>
+
+  <!-- load utilities - required for following scripts -->
+  <script src="util/scripts/language.util.js"></script>
+  <script src="util/scripts/click.util.js"></script>
+  <script src="util/scripts/preview-phone.util.js"></script>
+
+  <!-- load page form classes -->
+  <script src="forms/basicFormElement.class.js"></script>
+  <script src="forms/elements/string-input.class.js"></script>
+  <script src="forms/elements/date-input.class.js"></script>
+  <script src="forms/elements/time-input.class.js"></script>
+  <script src="forms/elements/number-input.class.js"></script>
+  <script src="forms/elements/text-input.class.js"></script>
+  <script src="forms/elements/boolean-input.class.js"></script>
+  <script src="forms/elements/file-input.class.js"></script>
+  <script src="forms/elements/location-input.class.js"></script>
+  <script src="app-editor/editor-page.class.js"></script>
+  <script src="app-editor/page-item.class.js"></script>
+
+  <script src="util/scripts/ui.util.js"></script>
+
+  <!-- load page-cards -->
+  <script src="cards/elements/page-card.class.js"></script>
+
+  <!-- room -->
+  <script src="area-editor/area-editor.js"></script>
+  <script src="quiz-editor/quiz-editor.js"></script>
+
+  <!-- load app editor -->
+  <script src="app-editor/app-editor.js"></script>
+  <script src="app-editor/connector.js"></script>
+  <!-- dragsort list -->
+  <script src="util/scripts/drag-list.util.js"></script>
+
+  <!-- load dashboard -->
+  <script src="dashboard/dash-item.class.js"></script>
+  <script src="dashboard/dashboard.js"></script>
+
+  <!-- ===================================================================== -->
+
+  <!-- load styles -->
+  <!-- ==MASTER -->
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <!-- ==PREVIEW PHONE -->
+  <link href="preview-phone/preview-phone.css" rel="stylesheet" type="text/css">
+  <!-- ==INPUT FORMS -->
+  <link href="forms/styles/form-elements.css" rel="stylesheet" type="text/css">
+  <link href="forms/styles/string-input.css" rel="stylesheet" type="text/css">
+  <link href="forms/styles/date-input.css" rel="stylesheet" type="text/css">
+  <link href="forms/styles/time-input.css" rel="stylesheet" type="text/css">
+  <link href="forms/styles/number-input.css" rel="stylesheet" type="text/css">
+  <link href="forms/styles/text-input.css" rel="stylesheet" type="text/css">
+  <link href="forms/styles/boolean-input.css" rel="stylesheet" type="text/css">
+  <link href="forms/styles/image-input.css" rel="stylesheet" type="text/css">
+  <link href="forms/styles/location-input.css" rel="stylesheet" type="text/css">
+  <!-- ==PAGE CARD -->
+  <link href="cards/styles/page-card.css" rel="stylesheet" type="text/css">
+
+  <!-- ==EDITORS -->
+  <link href="util/style/editor.css" rel="stylesheet" type="text/css">
+  <link href="app-editor/app-editor.css" rel="stylesheet" type="text/css">
+  <link href="area-editor/area-editor.css" rel="stylesheet" type="text/css">
+  <link href="quiz-editor/quiz-editor.css" rel="stylesheet" type="text/css">
+  <!-- ==DASHBOARD -->
+  <link href="dashboard/dashboard.css" rel="stylesheet" type="text/css">
+
+  <!--UTIL -->
+  <link rel="stylesheet" href="util/style/devices.min.css" type="text/css">
+  <link rel="stylesheet" href="util/style/tabs.css" type="text/css">
+</head>
+
+<!-- ======================================================================= -->
+<!-- ======================================================================= -->
+<!-- ======================================================================= -->
+
+<body>
+  <!-- LOADING SCREEN - hide page until loading is done -->
+  <div id="login-cover">
+    <div class="loading__anim"></div>
+  </div>
+  <!-- /LOADING SCREEN -->
+  <!-- ===================================================================== -->
+  <!-- HEADER - holds control elements -->
+  <div class="header">
+    <!-- BACK BUTTON -->
+    <div class="header__buttons-left">
+      <button id="btnBack" class="btn button--icon">
+        <i id="backIcon" class="fas fa-2x fa-chevron-left inactiveBtn"></i>
+      </button>
+    </div>
+    <!-- LOGO & TITLE -->
+    <div class="header__center">
+      <img class="pccr_logo" src="util/assets/pccr_logo.png" alt="LOGO">
+      <div id="__string-headerTitle" class="header__title __string"></div>
+    </div>
+    <!-- CONTROL BUTTONS -->
+    <div class="header__buttons-right">
+      <button type="button" id="btnUserInfo" class="btn button--icon">
+        <i id="userIcon" class="far fa-2x fa-user-circle"></i>
+        <!-- USER INFO POPUP -->
+        <div id="userInfo" class="hidden">
+          <div id="__string-userHeader" class="__string"> </div>
+          <div id="user_name"> </div>
+          <div id="user_email"> </div>
+          <div id="user_orga"> </div>
+        </div>
+      </button>
+      <!-- FULLSCREEN BUTTON -->
+      <button type="button" id="btnToogleFullscreen" class=" btn button--icon">
+        <i id="fullScreenIcon" class="fas fa-2x fa-expand"></i>
+      </button>
+      <!-- LOGOUT BUTTON -->
+      <button type="button" id="btnLogout" class="btn button--icon">
+        <i id="logoutIcon" class="fas fa-2x fa-times"></i>
+      </button>
+    </div>
+  </div>
+  <!-- /HEADER -->
+  <!-- ===================================================================== -->
+  <!-- LANDING NAVIGATION -->
+  <div id="landing-box" class="main-container container--landing">
+    <!-- GOTO PAGES -->
+    <button id="goto-page" class="btn card card--square __nav_target">
+      <div class="card__icon-box">
+        <i class="far fa-5x fa-file"></i>
+      </div>
+      <div id="__string-navPageTitle" class="card__title __string"></div>
+      <div id="__string-navPageDesc" class="card__text __string"></div>
+    </button>
+    <!-- GOTO APPS -->
+    <button id="goto-apps" class="btn card card--square __nav_target">
+      <div class="card__icon-box">
+        <i class="fas fa-5x fa-mobile-alt"></i>
+      </div>
+      <div id="__string-navAppTitle" class="card__title __string"></div>
+      <div id="__string-navAppDesc" class="card__text __string"></div>
+    </button>
+    <!-- GOTO DASHBOARD -->
+    <button id="goto-dash" class="btn card card--square __nav_target">
+      <div class="card__icon-box">
+        <i class="fas fa-5x fa-chart-line"></i>
+      </div>
+      <div id="__string-navDashTitle" class="card__title __string"></div>
+      <div id="__string-navDashDesc" class="card__text __string"></div>
+    </button>
+  </div>
+  <!-- /LANDING -->
+  <!-- ===================================================================== -->
+  <!-- PAGES NAVIGATION -->
+  <div id="page-box" class="main-container container--pages hidden">
+    <!-- INFO PAGES -->
+    <button id="page-info" class="btn card card--square __nav_target">
+      <div class="card__icon-box">
+        <i class="fas fa-5x fa-file-invoice"></i>
+      </div>
+      <div id="__string-navInfoTitle" class="card__title __string"></div>
+      <div id="__string-navInfoDesc" class="card__text __string"></div>
+    </button>
+    <!-- ROOM PAGES -->
+    <button id="page-room" class="btn card card--square __nav_target">
+      <div class="card__icon-box">
+        <i class="fas fa-5x fa-map-marked-alt"></i>
+      </div>
+      <div id="__string-navAreaTitle" class="card__title __string"></div>
+      <div id="__string-navAreaDesc" class="card__text __string"></div>
+    </button>
+    <!-- INTERACT PAGES -->
+    <button id="page-interact" class="btn card card--square __nav_target">
+      <div class="card__icon-box">
+        <i class="far fa-5x fa-hand-pointer"></i>
+      </div>
+      <div id="__string-navInterTitle" class="card__title __string"></div>
+      <div id="__string-navInterDesc" class="card__text __string"></div>
+    </button>
+  </div>
+  <!-- /PAGES -->
+  <!-- ===================================================================== -->
+  <!-- INFO_PAGE_BOX -->
+  <div id="info-page-box" class="info-editor-container hidden">
+    <!-- LEFT CONTAINER -->
+    <div class="info-editor-container__left">
+      <!-- TOP -->
+      <!-- PAGE TYPE SELECTION -->
+      <div class="select-container">
+        <div id="select-choices" class="select-container__choices"></div>
+        <div id="__string-infoEditBox" class="label label--centered __string">
+        </div>
+      </div>
+      <!-- LAYOUT SELECTION -->
+      <div id="layout-container" class="layout-container"></div>
+      <!-- BOTTOM -->
+      <div class="documentation-container">
+        <!-- BOTTOM LEFT -->
+        <div class="instruction-box">
+          <!-- BASIC -->
+          <button id="add-basic-info" class=" btn card card--square __nav_target">
+            <div class="card__icon-box">
+              <i class="far fa-5x fa-file-alt"></i>
+            </div>
+            <div id="__string-navBasicInfoTitle" class="card__title __string">
+            </div>
+            <div id="__string-navBasicInfoDesc" class="card__text __string">
+            </div>
+          </button>
+          <!-- INSTRUCTIONS -->
+          <div id="instruction-slideIn">
+            <div id="instruction-content" class="label">
+              <div id="__string-instructionContent" class="__string"></div>
+            </div>
+          </div>
+        </div>
+        <!-- BOTTOM RIGHT -->
+        <div class="interaction-box">
+          <!-- ADVANCED -->
+          <button id="add-advanced-info" class=" btn card card--square __nav_target">
+            <div class="card__icon-box">
+              <i class="fas fa-5x fa-file-alt"></i>
+            </div>
+            <div id="__string-navAdvInfoTitle" class="card__title __string">
+            </div>
+            <div id="__string-navAdvInfoDesc" class="card__text __string"></div>
+          </button>
+          <!-- INTERACTION -->
+          <div id="interaction-slideIn">
+            <!-- CONTROLS -->
+            <div id="item-interaction-controls" class="label hidden">
+              <div class="grid">
+                <!-- SINGLE PAGE -->
+                <div class="grid">
+                  <div id="__string-instructDropdown" class="label--line __string"></div>
+                  <select id="pageDropdown"></select>
+                  <button id="dropdownButtonRead" class="btn button button--fullWidth">
+                    <span id="__string-btnRead" class="__string"></span>
+                  </button>
+                </div>
+                <!-- PAGE GRID -->
+                <div class="grid">
+                  <div id="__string-instructGrid" class="label--line __string"></div>
+                  <button id="dropdownButtonGrid" class="btn button button--fullWidth">
+                    <span id="__string-btnGrid" class="__string"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- CONTAINER for FORM and GRID display -->
+      <div id="form-container"></div>
+      <div id="grid-container"></div>
+    </div>
+    <!-- RIGHT CONTAINER -->
+    <div class="info-editor-container__right">
+      <!-- FORM OUTPUT -->
+      <div id="formOutput-container">
+        <!-- TABS -->
+        <div id="result-tabs">
+          <!-- TAB CONTROLS -->
+          <!-- 1 -->
+          <input id="tab1" class="tab-input" type="radio" name="tabs">
+          <label class="tab-label" for="tab1">
+            <i class="fas fa-code"></i>
+            <div id="__string-tabRaw" class="__string"></div>
+          </label>
+          <!-- 2 -->
+          <input id="tab2" class="tab-input" type="radio" name="tabs" checked>
+          <label class="tab-label" for="tab2">
+            <i class="fas fa-mobile-alt"></i>
+            <div id="__string-tabPhone" class="__string"></div>
+          </label>
+          <!-- 3 -->
+          <input id="tab3" class="tab-input" type="radio" name="tabs">
+          <label class="tab-label" for="tab3">
+            <i class="fas fa-cart-arrow-down"></i>
+            <div id="__string-tabCart" class="__string"></div>
+          </label>
+          <!-- TAB CONTENT -->
+          <!-- 1 RAW JSON -->
+          <section id="content1" class="tab-section">
+            <pre id="formOutput"></pre>
+          </section>
+          <!-- 2 - PREVIEW -->
+          <section id="content2" class="tab-section">
+            <!-- PREVIEW PHONE -->
+            <div id="phone-container" class="phone-container hidden">
+              <div class="marvel-device nexus5">
+                <div class="top-bar"></div>
+                <div class="sleep"></div>
+                <div class="volume"></div>
+                <div class="camera"></div>
+                <div class="screen" id="preview-phone">
+                  <div class="preview-phone__header"></div>
+                  <div class="preview-phone__body"></div>
+                  <div class="preview-phone__footer"></div>
+                </div>
+              </div>
+              <!-- crUD CONTROLS -->
+              <div class="footer-buttons hidden">
+                <button id="dropdownButtonUpdate" class="btn button button--rectangular">
+                  <span id="__string-btnUpdate" class="__string"></span>
+                </button>
+                <button id="dropdownButtonDelete" class="btn button button--rectangular">
+                  <span id="__string-btnDelete" class="__string"></span>
+                </button>
+              </div>
+            </div>
+            <!-- DELETE DIALOGUE -->
+            <div class="delete-dialog hidden">
+              <div class="content">
+                <i class="fas fa-exclamation-triangle fa-3x"></i>
+                <span id="__string-dlgDelete" class="__string"></span>
+                <button id="dlg_btn_cancel" class="btn button button--fullWidth">
+                  <span id="__string-btnCancelDelete" class="__string"></span>
+                  </button>
+                <button id="dlg_btn_confirm" class="btn button button--fullWidth alert">
+                  <span id="__string-btnConfirmDelete" class="__string"></span>
+                  </button>
+              </div>
+            </div>
+          </section>
+          <!-- 3 - SHOPPING CART -->
+          <section id="content3" class="tab-section">
+            <!-- https://database.visit.uni-passau.de/drupal/wisski/navigate -->
+            <iframe src="" width="98%" height="98%"></iframe>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /INFO_PAGE_BOX -->
+  <!-- ===================================================================== -->
+  <!-- ROOM PAGE BOX -->
+  <div id="room-box" class="main-container2 container--pages hidden">
+    <!-- INDOOR CARD -->
+    <button id="page-indoor" class="btn card card--square __nav_target">
+      <div class="card__icon-box">
+        <i class="fas fa-5x fa-home"></i>
+      </div>
+      <div id="__string-indoorTitle" class="card__title __string"></div>
+      <div id="__string-indoorDesc" class="card__text __string"></div>
+    </button>
+    <!-- OUTDOOR CARD -->
+    <button id="page-outdoor" class="btn card card--square  __nav_target">
+      <div class="card__icon-box">
+        <i class="fas fa-5x fa-tree"></i>
+      </div>
+      <div id="__string-outdoorTitle" class="card__title __string"></div>
+      <div id="__string-outdoorDesc" class="card__text __string"></div>
+    </button>
+  </div>
+  <!-- AREA EDITOR -->
+  <div id="area-editor-box" class="editor-container hidden">
+    <!-- EDITOR CONTROLS -->
+    <div class="editor-controls full">
+      <!-- 1 -->
+      <div class="editor-controls__item">
+        <div id="__string-createRoomLabel" class="control__item__label __string"></div>
+        <div id="area-size">
+          <div class="numberBox pccr-data">
+            <label id="__string-gridSizeDesc" class="form-placeholder __string"></label>
+            <input id="area_grid_size" class="numberInput" min=5 max=10 type="number" />
+            <div id="__string-gridSize" class="form-constraints __string"></div>
+          </div>
+          <button id="area_create_btn" class="btn" name="button" onclick="AreaEditor.createGrid()">
+            <div id="__string-btnCreateRoom" class="__string"></div>
+          </button>
+          <button id="area_clear_btn" class="btn btnDelete hidden" onclick="AreaEditor.clearGrid()">
+            <div id="__string-btnClearRoom" class="__string"></div>
+          </button>
+        </div>
+      </div>
+      <!-- 2 -->
+      <div class="editor-controls__item">
+        <div id="__string-roomNameLabel" class="control__item__label __string"></div>
+        <div id="area-name">
+          <div class="stringBox pccr-data">
+            <label id="__string-roomNameDesc" class="form-placeholder __string"></label>
+            <input id="area_grid_name" minLength=5 maxlength=15 class="stringInput _area-name" value="">
+
+            <div id="__string-roomNameLength" class="form-constraints __string"></div>
+          </div>
+        </div>
+      </div>
+      <!-- 3 -->
+      <div id="room_type" class="editor-controls__item">
+        <div id="__string-roomMarkerLabel" class="control__item__label __string"></div>
+        <!-- indoor -->
+        <div class="center_container indoor">
+          <div class="center_boxes">
+            <div class="room_block door"></div>
+            <div class="room_block wall"></div>
+            <div class="room_block object"></div>
+          </div>
+          <div class="center_button">
+            <button id="__string-door" class="btn __string" onclick="AreaEditor.changeMarker('door')"></button>
+            <button id="__string-wall" class="btn __string" onclick="AreaEditor.changeMarker('wall')"></button>
+            <button id="__string-object" class="btn __string" onclick="AreaEditor.changeMarker('object')"></button>
+          </div>
+        </div>
+        <!-- outdoor -->
+        <div class="center_container outdoor">
+          <div class="center_boxes">
+            <div class="room_block trail"></div>
+            <div class="room_block lawn"></div>
+            <div class="room_block poi"></div>
+          </div>
+          <div class="center_button">
+            <button id="__string-trail" class="btn __string" onclick="AreaEditor.changeMarker('trail')"></button>
+            <button id="__string-lawn" class="btn __string" onclick="AreaEditor.changeMarker('lawn')"></button>
+            <button id="__string-poi" class="btn __string" onclick="AreaEditor.changeMarker('poi')"></button>
+          </div>
+        </div>
+      </div>
+      <!-- 4 -->
+      <div class="editor-controls__item">
+        <div id="__string-roomSaveLabel" class="control__item__label __string"></div>
+        <button id="__string-roomSaveButton" class="btn  __string" onclick="AreaEditor.commitRoom()"></button>
+      </div>
+    </div>
+    <!-- EDITOR PANE -->
+    <div id="area-editor-pane" class="editor-pane--full"></div>
+  </div>
+  <!-- /ROOM PAGE BOX -->
+  <!-- ===================================================================== -->
+  <!-- INTERACT PAGE BOX -->
+  <div id="interact-box" class="main-container1 container--pages hidden">
+    <!-- QUIZ BUTTON -->
+    <button id="page-quiz" class="btn card card--square __nav_target">
+      <div class="card__icon-box">
+        <i class="fas fa-5x fa-question"></i>
+      </div>
+      <div id="__string-quizTitle" class="card__title __string"></div>
+      <div id="__string-quizDesc" class="card__text __string"></div>
+    </button>
+  </div>
+  <!-- QUIZ EDITOR -->
+  <div id="quiz-editor-box" class="editor-container hidden">
+    <!-- EDITOR CONTROLS -->
+    <div class="editor-controls">
+      <!-- 1 -->
+      <div class="editor-controls__item">
+        <div id="__string-addQuestionLabel" class="control__item__label __string"></div>
+        <div class="button-grid">
+          <button id="quiz_text_btn" class="btn" onclick="QuizEditor.addQuestion('text')">
+            <div id="__string-btnAddQuestion" class="__string"></div>
+          </button>
+          <button id="quiz_image_btn" class="btn" onclick="QuizEditor.addQuestion('image')">
+            <div id="__string-btnAddImageQuestion" class="__string"></div>
+          </button>
+          <button id="quiz_existing_btn" class="btn" onclick="QuizEditor.changeQuestion()">
+            <div id="__string-btnExistingQuestion" class="__string"></div>
+          </button>
+        </div>
+      </div>
+      <!-- 2 -->
+      <div class="editor-controls__item">
+        <div id="__string-quizNameLabel" class="control__item__label __string"></div>
+        <div id="quiz-name">
+          <div class="stringBox pccr-data">
+            <label id="__string-quizNameDesc" class="form-placeholder __string"></label>
+            <input class="stringInput _quiz-name" minlength=5 maxlength=15 value="">
+            <div id="__string-quizNameLength" class="form-constraints __string"></div>
+          </div>
+        </div>
+      </div>
+      <!-- 3 -->
+      <div class="editor-controls__item">
+        <div id="__string-quizSaveButton" class="control__item__label __string"></div>
+        <button class="btn" onclick="QuizEditor.commitQuiz()">
+          <div id="__string-quizSaveButton" class="__string"></div>
+        </button>
+      </div>
+    </div>
+    <!-- EDITOR PANE -->
+    <div id="quiz-editor-pane" class="editor-pane--preview">
+      <!-- FORM CONTAINER -->
+      <div id="form-container"></div>
+      <div id="grid-container"></div>
+    </div>
+    <!-- PREVIEW PANE -->
+    <div id="editor-page-preview" class="editor-preview"></div>
+  </div>
+  <!-- /INTERACT PAGE BOX -->
+  <!-- ===================================================================== -->
+  <!-- APP BOX -->
+  <div id="app-box" class="main-container2 container--pages hidden">
+    <!-- NEW APP CARD -->
+    <button id="page-new-app" class="card btn card--square __nav_target">
+      <div class="card__icon-box">
+        <i class="far fa-5x fa-plus-square"></i>
+      </div>
+      <div id="__string-appNewTitle" class="card__title __string"></div>
+      <div id="__string-appNewpDesc" class="card__text __string"></div>
+    </button>
+    <!-- CHANGE APP CARD -->
+    <button id="page-change-app" class="card btn card--square __nav_target">
+      <div class="card__icon-box">
+        <i class="far fa-5x fa-edit"></i>
+      </div>
+      <div id="__string-appChangeTitle" class="card__title __string"></div>
+      <div id="__string-appChangeDesc" class="card__text __string"></div>
+    </button>
+  </div>
+  <!-- APP EDITOR -->
+  <div id="app-editor-box" class="editor-container hidden">
+    <!-- EDITOR CONTROLS -->
+    <div class="editor-controls">
+      <!-- 1 -->
+      <div class="editor-controls__item">
+        <div id="__string-appMetaLabel" class="control__item__label __string"></div>
+        <div class="editor-controls__buttons">
+          <button id="__string-btnAddAppMeta" class="btn __string" onclick="AppEditor.showMetaDataEditor()"></button>
+        </div>
+      </div>
+      <!-- 2 -->
+      <div class="editor-controls__item">
+        <div id="__string-appAddLandingLabel" class="control__item__label __string"></div>
+        <div class="editor-controls__buttons">
+          <!-- DEBUG - skip meta form -->
+          <!-- <button class='btn' onclick="AppEditor.showLandingPageEditor()">
+            Add Landing
+          </button> -->
+          <button id="__string-btnSaveAppLanding" class='btn __string' onclick="AppEditor.commitLandingPage()" disabled></button>
+        </div>
+      </div>
+      <!-- 3 -->
+      <div class="editor-controls__item">
+        <div id="__string-appAddContentLabel" class="control__item__label __string"></div>
+        <div class="button-grid">
+          <!-- single -->
+          <button id="__string-btnAddSingelPage" class='btn __string' onclick="AppEditor.showPageSelection('single')" disabled></button>
+          <!-- cube -->
+          <button id="__string-btnAddCubePage" class='btn __string' onclick="AppEditor.showPageSelection('cube')" disabled></button>
+          <!-- room -->
+          <button id="__string-btnAddRoomPage" class='btn __string' onclick="AppEditor.showPageSelection('room')" disabled></button>
+          <!-- interact -->
+          <button id="__string-btnAddInteractionPage" class='btn __string' onclick="AppEditor.showPageSelection('interaction')" disabled></button>
+        </div>
+      </div>
+    </div>
+    <!-- EDITOR PANE -->
+    <div id="app-editor-pane" class="editor-pane--preview">
+      <!-- FORM CONTAINER -->
+      <div id="form-container" class="hidden"></div>
+      <!-- PAGE CONTAINER -->
+      <div id="page-container" class="hidden"></div>
+      <!-- PAGE LIST -->
+      <div id="page-container__list" class="editor-page-list hidden">
+        <div id="__string-pageListLabel" class="page_list__header __string"></div>
+        <ul id="page-list"></ul>
+        <button id="__string-btnCommitApp" type="button" class="button btn btn__commit-app __string" onclick="AppEditor.commitApp()"></button>
+      </div>
+      <!-- PAGE SELECTION POPUP -->
+      <div id="page-select-popup" class="hidden">
+        <!-- CONTENT -->
+        <div class="select-popup-content">
+          <!-- close button -->
+          <button type="button" class="btn btn_close_app_popup">
+            <i class="fas fa-times"></i>
+          </button>
+          <!-- page selection -->
+          <div class="select-popup-pages hidden">
+            <!-- text -->
+            <div class="card card--square" onclick="AppEditor.createEditorGrid('text')">
+              <div class="card__icon-box">
+                <i class="fas fa-3x fa-file-alt"></i>
+              </div>
+              <div id="__string-text" class="card__title __string"></div>
+            </div>
+            <!-- object -->
+            <div class="card card--square" onclick="AppEditor.createEditorGrid('object')">
+              <div class="card__icon-box">
+                <i class="fas fa-3x fa-archive"></i>
+              </div>
+              <div id="__string-object" class="card__title __string"></div>
+            </div>
+            <!-- person -->
+            <div class="card card--square" onclick="AppEditor.createEditorGrid('person')">
+              <div class="card__icon-box">
+                <i class="fas fa-3x fa-walking"></i>
+              </div>
+              <div id="__string-person" class="card__title __string"></div>
+            </div>
+            <!-- event -->
+            <div class="card card--square" onclick="AppEditor.createEditorGrid('event')">
+              <div class="card__icon-box">
+                <i class="far fa-3x fa-calendar-plus"></i>
+              </div>
+              <div id="__string-event" class="card__title __string"></div>
+            </div>
+            <!-- place -->
+            <div class="card card--square" onclick="AppEditor.createEditorGrid('place')">
+              <div class="card__icon-box">
+                <i class="fas fa-3x fa-map-pin"></i>
+              </div>
+              <div id="__string-place" class="card__title __string"></div>
+            </div>
+          </div>
+          <!-- interaction selection -->
+          <div class="select-popup-pages __interact hidden">
+            <!-- quiz -->
+            <div class="card card--square" onclick="AppEditor.createEditorGrid('quiz')">
+              <div class="card__icon-box">
+                <i class="fas fa-3x fa-question"></i>
+              </div>
+              <div id="__string-quiz" class="card__title __string"></div>
+            </div>
+          </div>
+          <!-- cube interaction selection -->
+          <div class="select-popup-pages __cubeinteract hidden">
+            <!-- question -->
+            <div class="card card--square" onclick="AppEditor.createEditorGrid('question')">
+              <div class="card__icon-box">
+                <i class="fas fa-3x fa-question"></i>
+              </div>
+              <div id="__string-quiz" class="card__title __string"></div>
+            </div>
+          </div>
+          <!-- cube media selection -->
+          <div class="select-popup-pages __media hidden">
+            <!-- image -->
+            <div class="card card--square" onclick="AppEditor.createUpload('image')">
+              <div class="card__icon-box">
+                <i class="far fa-3x fa-image"></i>
+              </div>
+              <div id="__string-image" class="card__title __string"></div>
+            </div>
+          </div>
+          <!-- GRID -->
+          <div class="select-popup-grid hidden"></div>
+          <!-- UPLOAD -->
+          <div class="select-upload-pane hidden"></div>
+        </div>
+      </div>
+    </div>
+    <!-- PREVIEW PHONE -->
+    <div id="app-editor-page-preview" class="editor-preview">
+      <div id="phone-container" class="phone-container">
+        <div class="marvel-device nexus5">
+          <div class="top-bar"></div>
+          <div class="sleep"></div>
+          <div class="volume"></div>
+          <div class="camera"></div>
+          <div class="screen" id="preview-phone"></div>
+          <!-- ADD PAGE BUTTON -->
+          <div class="btn_add-page-to-app hidden">
+            <button id="__string-btnAddPageToApp" class="btn __string" onclick="AppEditor.addPageToApp()"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- APP CHANGE LIST -->
+  <div id="app-change-box" class="editor-container hidden">
+    <div id="__string-lblChangeApp" class="dashboard__header __string"></div>
+    <div class="app-list"></div>
+  </div>
+  <!-- /APP_BOX -->
+  <!-- ===================================================================== -->
+  <!-- DASH BOX -->
+  <div id="dash-box" class="editor-container hidden">
+    <div id="__string-lblDashboardHeader" class="dashboard__header __string"></div>
+    <ul id="dash-list"></ul>
+    <!-- STATISTICS CONTAINER -->
+    <div id="dash__stats" class="hidden">
+      <div id="__string-lblAppStatistics" class="dashboard__header __string"></div>
+      <button class='button btn' id="btn__close_stats" onclick='Dash.closeStats()'>
+        <i class="fas fa-times fa-2x"></i>
+      </button>
+      <!-- STAT BOXES -->
+      <div id="__string-app_access" class=" __string"></div>
+      <div class="total"></div>
+      <div class="unique"></div>
+      <div class="stat-grid">
+        <div class="weekdays"></div>
+        <div class="page-type"></div>
+      </div>
+
+      <div class="times"></div>
+      <div class="app-pages"></div>
+    </div>
+  </div>
+  <!-- /DASH BOX -->
+  <!-- ===================================================================== -->
+  <!-- FOOTER -->
+  <div class="footer">
+    <img class="logo_visit" src="util/assets/visit_logo.png" alt="ViSIT">
+    <div class="doku">
+      <i class="fas fa-book"></i>
+      <a id="__string-lblDocumentationUser" class="__string" href="https://pccr-website.web.app/manual/" target="_blank"></a>
+    </div>
+    <img class="logo_interreg" src="util/assets/interreg_logo.png" alt="interreg">
+  </div>
+  <!-- /FOOTER -->
+  <!-- ===================================================================== -->
+</body>
+
+</html>
+<!-- ======================================================================= -->
+<!-- EOF -->

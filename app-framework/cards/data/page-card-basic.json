@@ -1,0 +1,35 @@
+{
+  "info": {
+    "title": "title",
+    "subtitle": "subtitle",
+    "text": "text",
+    "target": "info",
+    "image": {
+      "alt": "Info Image",
+      "fa-add": "fas",
+      "fa-class": "fa-info"
+    }
+  },
+  "hours": {
+    "title": "title",
+    "subtitle": "subtitle",
+    "text": "text",
+    "target": "hours",
+    "image": {
+      "alt": "Hours Image",
+      "fa-add": "far",
+      "fa-class": "fa-clock"
+    }
+  },
+  "admission": {
+    "title": "title",
+    "subtitle": "subtitle",
+    "text": "text",
+    "target": "admission",
+    "image": {
+      "alt": "Admisson Image",
+      "fa-add": "fas",
+      "fa-class": "fa-money-bill-wave"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+
+  <div id="app__header">
+    <div id="name">${data.name}</div>
+    <i id="phone-header-icon" class="fas fa-box-open"></i>
+  </div>
+  <div id="app__body">
+    <div class="body-box">
+      <div id="image">
+        <img id="full-image" src="${data.image.url}" alt="IMAGE">
+      </div>
+      <div id="infobox-full">
+        <div class="infobox-entry">
+          <i class="fas fa-palette"></i>
+          <div id="artist">${data.artist}</div>
+        </div>
+        <div class="infobox-entry">
+          <i class="far fa-calendar-plus"></i>
+          <div class="creation-date">
+            ${data.creation_date.date}
+          </div>
+          <div class="anno">
+            ${labels[data.creation_date.anno]}
+          </div>
+        </div>
+        <div class="infobox-entry">
+          <i class="fas fa-layer-group"></i>
+          <div id="era">${data.era}</div>
+      </div>
+      <div class="infobox-entry">
+          <i class="fas fa-ruler-combined"></i>
+
+          <div id="measure">${data.size.measure}</div>
+          <div id="unit">${data.size.unit}</div>
+
+        </div>
+      </div>
+    </div>
+    <div id="text">${data.text}</div>
+  </div>
+
+  <div id="app__footer"> </div>

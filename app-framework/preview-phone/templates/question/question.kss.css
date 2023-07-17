@@ -1,0 +1,62 @@
+/* kss documentation */
+// Question Screen
+//
+//<h1>JSONSchema</h1>
+//<pre id="formOutput" src="../app-framework/forms/data/question.schema.json"></pre>
+//
+// Style Guide: screen.Question
+//
+
+// Text Question Screen
+//
+// The text 'question' screen contains the following elements:
+// <br>
+//
+//  element                  | description
+// --------------------------| ---------------
+//  {#question}              | the question.
+//  {.answers}               | the container for the answers to the question.
+//  {#right}                 | the right answer, may appear at any spot.
+//  {#false_1}               | a false answer, may appear at any spot.
+//  {#false_2}               | a false answer, may appear at any spot.
+//  {#false_3}               | a false answer, may appear at any spot.
+//
+// The outer container has class {.screen}
+//
+// Markup: ./templates/question/text.layout.html
+//
+// Style guide: screen.Question.Text
+/* /END/  */
+
+* {
+}
+
+/* kss documentation */
+
+// Image Question Screen
+//
+//The 'event' screen element consits of header body and footer. <br>
+// <br>
+// It contains the following elements:
+// <br>
+//
+//  element                  | description
+// --------------------------| ---------------
+//  {#question}              | the question.
+//  {#image}                 | the container for the question's image.
+//  {#full-image}            | the question's image.
+//  {.answers}               | the container for the answers to the question.
+//  {#right}                 | the right answer, may appear at any spot.
+//  {#false_1}               | a false answer, may appear at any spot.
+//  {#false_2}               | a false answer, may appear at any spot.
+//  {#false_3}               | a false answer, may appear at any spot.
+//
+// The outer container has class {.screen}
+//
+// Markup: ./templates/question/image.layout.html
+//
+// Style guide: screen.Question.Image
+/* /END/  */
+
+* {
+}

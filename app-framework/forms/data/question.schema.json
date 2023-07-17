@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "name": "quiz",
+  "sortBy": "question",
+  "properties": {
+    "language" : {
+      "type" : "string",
+      "name" : "language",
+      "description": "page_language_description",
+      "enum" : ["en", "de"]
+    },
+    "question" : {
+      "type" : "string",
+      "name" : "question",
+      "description": "quiz_question_description",
+      "minLength": 20,
+      "maxLength": 150
+    },
+    "image": {
+      "type": "object",
+      "name": "image",
+      "size" : 10,
+      "form" : "img",
+      "properties":{
+        "image_path" : {
+        "type" : "string",
+        "description": "image_path_description",
+        "size" : 5,
+        "media" : "image"
+        },
+        "image_name" : {
+          "type" : "string",
+          "name": "name",
+          "description": "image_name_description",
+          "minLength": 7,
+          "maxLength": 10
+        }
+      }
+    },
+    "right" : {
+      "type" : "string",
+      "name" : "right",
+      "description": "quiz_right_description",
+      "minLength": 3,
+      "maxLength": 50
+    },
+    "false_1" : {
+      "type" : "string",
+      "name" : "false_1",
+      "description": "quiz_false_description",
+      "minLength": 3,
+      "maxLength": 50
+    },
+    "false_2" : {
+      "type" : "string",
+      "name" : "false_2",
+      "description": "quiz_false_description",
+      "minLength": 3,
+      "maxLength": 50
+    },
+    "false_3" : {
+      "type" : "string",
+      "name" : "false_3",
+      "description": "quiz_false_description",
+      "minLength": 3,
+      "maxLength": 50
+    },
+  "layout": {
+    "type": "string",
+    "enum": ["text", "image"]
+  }
+},
+  "additionalProperties": false,
+  "required": ["layout"]
+}

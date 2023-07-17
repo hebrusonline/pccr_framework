@@ -1,0 +1,40 @@
+<div id="app__header">
+  <div id="name" class="name__long">${data.name}</div>
+  <i id="phone-header-icon" class="far fa-calendar-alt"></i>
+</div>
+<div id="app__body">
+  <div class="info_box">
+    <div class="date_box">
+      <div class="start-box">
+        <i class="far fa-play-circle"></i>
+        <div class="start-date">
+          ${data.start_date.date.split('-')[0]} ${labels[data.start_date.anno]}
+        </div>
+      </div>
+      <div class="end-box">
+        <i class="far fa-stop-circle"></i>
+        <div class="end-date">
+          ${data.end_date.date.split('-')[0]} ${labels[data.end_date.anno]}
+        </div>
+      </div>
+    </div>
+
+    <div class="location-box">
+      <i class="fas fa-map-pin"></i>
+      <div id="location_name">
+        ${data.location_name}
+      </div>
+    </div>
+  </div>
+
+
+  <div class="__array">
+    <div id="keywords" class="keyword_box">
+      <div id="keyword">${itemValue.keyword}</div>
+    </div>
+  </div>
+
+  <div id="text">${data.text}</div>
+
+</div>
+<div id="app__footer"></div>

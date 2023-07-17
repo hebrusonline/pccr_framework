@@ -1,0 +1,74 @@
+/* kss documentation */
+
+// ImageInput
+//
+// The ImageInput field per se is hidden and operated by via the buttons click listener. <br>
+// The imageInputLabel is an area representing a "button" to trigger the upload within the ViewModel. <br>
+// See the technical documentation for details. <br>
+// <br>
+// It contains the following information:
+// <br>
+//  elemet              | description
+// ---------------------| ---------------
+//  {.form-placeholder} | label for the input text.
+//  {.imageInput}       | the input field (hidden).
+//  {.imageInputLabel}  | a "button" element containing a fontawesome icon and a description (imageInputButton).
+//  {.imageInputButton} | the button description.
+//  {.imagePreview}     | an area to hold an image once one was selected.
+//  {.form-description} | contains text describing the desired input value.
+//  {.form-constraints} | contains text describing the constraints for the input field.
+//
+// The outer container has class {.imageBox}
+//
+// Markup: ./templates/image-input.html
+//
+// Style Guide: input.ImageInput
+/* /END/  */
+
+* {}
+
+.imageBox {
+  display: grid;
+  grid-template: [row1-start] "placeholder . ." [row1-end] [row2-start] "imageInput imagePreview imagePreview" [row2-end] [row3-start] "description constraints constraints" [row3-end];
+  background-color: var(--transparent, var(--not-transparent));
+  justify-items: center;
+  align-items: center;
+}
+
+.form-placeholder{
+  justify-self: left !important;
+}
+
+.imageInput {
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.imageInputLabel {
+    grid-area: imageInput;
+    font-size: 120%;
+    height: 60px;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    padding: 5%;
+    border: 1px solid black;
+    margin: 1%;
+}
+
+.imageInputButton{
+  cursor: pointer;
+  font-size: 100%;
+}
+
+.imagePreview{
+  background: none;
+  grid-area: imagePreview;
+  height: auto;
+  width: 200px;
+  margin-bottom: 5%;
+}

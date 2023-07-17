@@ -1,0 +1,38 @@
+/* kss documentation */
+
+// TimeInput
+//
+// The TextInput offers a field for entering a time in the format HH:MM. <br>
+// <br>
+// It contains the following information:
+// <br>
+//  elemet              | description
+// ---------------------| ---------------
+//  {.form-placeholder} | label for the input text.
+//  {.timeInput}        | the input field.
+//  {.form-description} | contains text describing the desired input value.
+//  {.form-constraints} | contains text describing the constraints for the input field.
+//
+// The outer container has class {.textBox}
+//
+// Markup: ./templates/time-input.html
+//
+// Style guide: input.TimeInput
+/* /END/  */
+
+* {}
+
+.timeBox {
+  display: grid;
+  grid-template: [row1-start] "placeholder placeholder placeholder" [row1-end] [row2-start] "timeInput timeInput timeInput" [row2-end] [row3-start] "description constraints constraints" [row3-end];
+  background-color: var(--transparent, var(--not-transparent));
+}
+
+.timeInput {
+  grid-area: timeInput;
+  font-size: 150%;
+  margin: 0.5%;
+  border-radius: 10px;
+  padding: 1%;
+  color: black !important;
+}

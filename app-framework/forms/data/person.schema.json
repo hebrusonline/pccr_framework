@@ -1,0 +1,112 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "name": "person",
+  "sortBy" : "name",
+  "properties": {
+    "language" : {
+      "type" : "string",
+      "name" : "language",
+      "description": "page_language_description",
+      "enum" : ["en", "de"]
+    },
+    "name": {
+      "type": "string",
+      "name": "name",
+      "description": "person_name_description",
+      "minLength": 4,
+      "maxLength": 29
+    },
+    "image": {
+      "type": "object",
+      "name": "image",
+      "form" : "img",
+      "properties":{
+        "image_path" : {
+        "type" : "string",
+        "description": "image_path_description",
+        "size" : 5,
+        "media" : "image"
+        },
+        "image_name" : {
+          "type" : "string",
+          "name": "name",
+          "description": "image_name_description",
+          "minLength": 7,
+          "maxLength": 10
+        }
+      }
+    },
+    "birth_date": {
+      "type": "object",
+      "name": "birth_date",
+      "form" :"date",
+      "properties": {
+        "date": {
+          "type": "string",
+          "name": "birth_date",
+          "description": "birth_date_description",
+          "PCCRformat": "date"
+        },
+        "anno": {
+          "type": "string",
+          "name": "anno_birth",
+          "description": "anno_description",
+          "enum": ["AD", "BC"]
+        }
+      },
+      "required": ["date", "anno"]
+    },
+    "death_date": {
+      "type": "object",
+      "name": "death_date",
+      "form" :"date",
+      "properties": {
+        "date": {
+          "type": "string",
+          "name": "death_date",
+          "description": "death_date_description",
+          "PCCRformat": "date"
+        },
+        "anno": {
+          "type": "string",
+          "name": "anno_death",
+          "description": "anno_description",
+          "enum": ["AD", "BC"]
+        }
+      },
+      "required": ["date", "anno"]
+    },
+    "keywords": {
+      "type": "array",
+      "name": "keywords",
+      "items" : {
+        "type": "object",
+        "name": "keywords",
+        "form" :"rate",
+        "properties":{
+          "keyword" : {
+            "type" : "string",
+            "name" : "keyword",
+            "description": "person_keyword_description",
+            "minLength": 2,
+            "maxLength": 10
+          }
+        }
+      }
+    },
+    "text": {
+      "type": "string",
+      "name": "text",
+      "description": "person_text_description",
+      "minLength": 30,
+      "maxLength": 300
+    },
+    "layout": {
+      "type": "string",
+      "enum": ["basic", "image"]
+    }
+  },
+  "additionalProperties": false,
+  "required": ["layout"]
+}

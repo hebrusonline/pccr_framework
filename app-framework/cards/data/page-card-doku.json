@@ -1,0 +1,13 @@
+{
+  "text": {
+    "title": "title",
+    "subtitle": "subtitle",
+    "text": "text",
+    "target": "text",
+    "image": {
+      "alt": "Person Image",
+      "fa-add": "far",
+      "fa-class": "fa-file-alt"
+    }
+  }
+}

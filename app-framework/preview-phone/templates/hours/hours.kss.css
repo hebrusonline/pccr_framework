@@ -1,0 +1,38 @@
+/* kss documentation */
+// Hours Screen
+//
+//<h1>JSONSchema</h1>
+//<pre id="formOutput" src="../app-framework/forms/data/hours.schema.json"></pre>
+//
+// Style Guide: screen.Hours
+//
+
+// Basic Hours Screen
+//
+//
+// The basic 'hours' screen contains the following elements:
+// <br>
+//
+//  element                  | description
+// --------------------------| ---------------
+//  {#monday|tuesday|wednesday|thursday|friday|saturday|sunday . hours_day} | the container for the corresponding weekday.
+//  {.weekday}               | the name of the day.
+//  {.times}                 | the container for the opening time interval.
+//  {#opening_time}          | the opening time.
+//  {#closing_time}          | the closing time.
+//  {.closed_box}            | the container for the closed symbol, visible if closed on that day of the week.
+//
+// The outer container has class {.screen}
+//
+// Markup: ./templates/hours/basic.layout.html
+//
+// Style guide: screen.Hours.Basic
+/* /END/  */
+
+* {
+}
+
+#closing_time::before{
+  content: '-';
+  color: black;
+}

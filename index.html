@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>App Framework Login</title>
+  <link rel="icon" href="app-framework/favicon.ico">
+  <!-- Style -->
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+
+</head>
+
+<body>
+
+  <button id="btn_lang">[en]</button>
+
+  <div id="header-box">
+    <img class="header__logo" src="app-framework/util/assets/pccr_logo.png" alt="">
+    <div class="header__title __String __header_text">App Framework</div>
+  </div>
+
+  <div id="signin-box" class="hidden">
+    <!-- Signin box -->
+    <div id="signin">
+
+      <div class="span __String __login_text">Please log in or create an account!</div>
+      <br><br>
+      <input type="email" id="email" class="__String __email_tooltip" placeholder="email" />
+      <br>
+      <input type="password" id="password" class="__String __password_tooltip" placeholder="password" />
+      <br><br>
+      <button id="login" class="__String __login_button">Login</button>
+      <button id="signup" class="__String __signUp_button">Sign Up</button>
+    </div>
+  </div>
+
+  <div id="registration-box" class="hidden">
+
+    <div class="input">
+
+      <div class="span __String __signUp_text">Please enter your information!</div>
+      <button id="btn_close_reg">x</button>
+
+      <div class="form">
+        <div class="stringBox pccr-data">
+          <label class="form-placeholder __String __name_label">Name</label>
+          <input class="stringInput" id="reg_name" type="text" />
+        </div>
+
+        <div class="stringBox pccr-data">
+          <label class="form-placeholder __String __email_label">E-Mail</label>
+          <input class="stringInput" id="reg_mail" type="email" />
+        </div>
+
+        <div class="stringBox pccr-data">
+          <label class="form-placeholder __String __password_label">Password</label>
+          <input class="stringInput" id="reg_pass" type="password" />
+        </div>
+
+        <div class="stringBox pccr-data">
+          <label class="form-placeholder __String __password_repeat_label">Repeat Password</label>
+          <input class="stringInput" id="reg_pass_check" type="password" />
+        </div>
+
+        <div class="stringBox pccr-data">
+          <label class="form-placeholder __String __organization_label">Organization</label>
+          <input class="stringInput" id="reg_orga" type="text" />
+        </div>
+
+        <div class="stringBox pccr-data">
+          <label class="form-placeholder __String __language_label">Language</label>
+          <select class="stringInput" id="reg_lang">
+              <option value="de" class="__String __german_langage">German</option>
+              <option value="en" class="__String __english_langage">English</option>
+            </select>
+        </div>
+
+        <div id="disclaimer-container">
+          <input id="disclaimer-checkbox" type="checkbox" name="disclaimer">
+          <label for="disclaimer"><a href="#" id="disclaimer-link" class="__String __disclaimer_label"></a></label>
+        </div>
+
+        <button id="btn_register" class="__String __register_button" disabled>Register</button>
+      </div>
+    </div>
+    <div id="disclaimer_text-box" class=hidden>
+      <div class="span __String __disclaimer_header">Please enter your information!</div>
+      <button id="btn_close_disclaimer">x</button>
+      <div class="span __String __disclaimer_text">
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <div id="logo-box">
+    <img class="logo_visit" src="app-framework/util/assets/visit_logo.png" alt="ViSIT">
+    <div class=""></div>
+    <img class="logo_interreg" src="app-framework/util/assets/interreg_logo.png" alt="interreg">
+  </div>
+
+  <!-- Login script -->
+  <script src="login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+{
+  "info": {
+    "title": "Info",
+    "subtitle": "Eine Informationsseite erstellen!",
+    "text": "Enthält Eckdaten zum Museum.",
+    "documentation": "Basisinformation."
+  },
+  "hours": {
+    "title": "Öffnungszeiten",
+    "subtitle": "Eine Seite mit Öffnungszeiten erstellen.",
+    "text": "Enthält die Öffnungszeiten des Museums.",
+    "documentation": "Öffnungszeiten."
+  },
+  "admission": {
+    "title": "Eintrittspreise",
+    "subtitle": "Eine Seite mit Eintrittspreisen erstellen.",
+    "text": "Enthält Informationen zu Eintrittspreisen.",
+    "documentation": "Eintrittspreise."
+  },
+  "text": {
+    "title": "Text",
+    "subtitle": "Eine Textseite erstellen.",
+    "text": "Hier können Texte hinzugefügt werden.",
+    "documentation": "Texte."
+  },
+  "object": {
+    "title": "Objekt",
+    "subtitle": "Eine Objektseite erstellen.",
+    "text": "Hier können Ausstellungsobjekte beschrieben werden.",
+    "documentation": "Objekt."
+  },
+  "person": {
+    "title": "Person",
+    "subtitle": "Eine Personenseite erstellen!",
+    "text": "Hier können Personen beschrieben werden.",
+    "documentation": "Person."
+  },
+  "event": {
+    "title": "Ereignis",
+    "subtitle": "Eine Ereignisseite erstellen!",
+    "text": "Hier kann ein Ereignis beschrieben werden.",
+    "documentation": "Ereignis."
+  },
+  "place": {
+    "title": "Ort",
+    "subtitle": "Eine Ort-Seite erstellen!",
+    "text": "Hier kann ein Ort beschrieben werden.",
+    "documentation": "Ort."
+  }
+}

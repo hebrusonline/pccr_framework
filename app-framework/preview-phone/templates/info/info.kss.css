@@ -1,0 +1,36 @@
+/* kss documentation */
+// Info Screen
+//
+//<h1>JSONSchema</h1>
+//<pre id="formOutput" src="../app-framework/forms/data/info.schema.json"></pre>
+//
+// Style Guide: screen.Info
+//
+
+// Basic Info Screen
+//
+//
+// The basic 'info' contains the following elements:
+// <br>
+//
+//  element                  | description
+// --------------------------| ---------------
+//  {#logo}                  | the container for the page logo.
+//  {#logo-image}            | the page logo.
+//  {#caption}               | the page title.
+//  {#image}                 | the container for the page image.
+//  {#full-image}            | the page image.
+//  {#map}                   | the container for the location, gets replaced by a Google Maps element.
+//  {#latitude}              | the latitude of the location.
+//  {#longitude}             | the longitude of the location.
+//  {#text .text__short}     | the text of the page.
+//
+// The outer container has class {.screen}
+//
+// Markup: ./templates/info/basic.layout.html
+//
+// Style guide: screen.Info.Basic
+/* /END/  */
+
+* {
+}

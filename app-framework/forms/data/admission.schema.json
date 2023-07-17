@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "name": "admission",
+  "sortBy": "caption",
+  "properties": {
+    "language" : {
+      "type" : "string",
+      "name" : "language",
+      "description": "page_language_description",
+      "enum" : ["en", "de"]
+    },
+    "caption" : {
+      "type" : "string",
+      "name" : "caption",
+      "description": "admission_caption_description",
+      "minLength": 5,
+      "maxLength": 25
+    },
+    "rate" : {
+      "type" : "array",
+      "name" : "rate",
+      "items": {
+        "type" : "object",
+        "name" : "rate",
+        "form" :"rate",
+        "properties":{
+          "name": {
+            "type" : "string",
+            "name" : "name",
+            "description": "rate_name_description",
+            "minLength": 5,
+            "maxLength": 25
+          },
+          "amount": {
+            "type" : "number",
+            "name" : "amount",
+            "minimum": 0.00,
+            "maximum": 10000,
+            "description": "rate_amount_description"
+          },
+          "currency": {
+            "type" : "string",
+            "name" : "currency",
+            "description": "rate_currency_description",
+            "enum": ["€", "$", "Kč", "£"]
+          }
+        }
+      }
+    },
+    "layout": {
+      "type": "string",
+      "enum": ["basic"]
+    }
+  },
+  "additionalProperties": false,
+  "required": ["layout"]
+}

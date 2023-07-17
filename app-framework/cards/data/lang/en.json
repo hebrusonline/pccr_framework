@@ -1,0 +1,50 @@
+{
+  "info": {
+    "title": "Info",
+    "subtitle": "This will create an information page!",
+    "text": "This contains general information about the museum.",
+    "documentation": "This is information."
+  },
+  "hours": {
+    "title": "Hours",
+    "subtitle": "This will create an opening hours page!",
+    "text": "This contains information about the open and closing times.",
+    "documentation": "These are opening hours."
+  },
+  "admission": {
+    "title": "Admission",
+    "subtitle": "This will create an admission page!",
+    "text": "This contains admission fees for certain groups.",
+    "documentation": "This is an admission."
+  },
+  "text": {
+    "title": "Text",
+    "subtitle": "This will create a text page!",
+    "text": "Here additional text can be entered.",
+    "documentation": "Text."
+  },
+  "object": {
+    "title": "Object",
+    "subtitle": "This will create a museum object page!",
+    "text": "This is to describe a generic museum exhibition object.",
+    "documentation": "This is an exhibit."
+  },
+  "person": {
+    "title": "Person",
+    "subtitle": "This will create a person page!",
+    "text": "This is to describe a person.",
+    "documentation": "This is a person."
+  },
+  "event": {
+    "title": "Event",
+    "subtitle": "This will create an event page!",
+    "text": "This is to describe an event.",
+    "documentation": "This is an event."
+  },
+  "place": {
+    "title": "Place",
+    "subtitle": "This will create a place page!",
+    "text": "This is to describe a place.",
+    "documentation": "This is a place."
+  }
+}

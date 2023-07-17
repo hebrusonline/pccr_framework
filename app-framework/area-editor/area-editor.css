@@ -1,0 +1,145 @@
+.room_block {
+  box-sizing: border-box;
+  float: left;
+  height: 45px;
+  width: 45px;
+  border: solid;
+  display: inline-block;
+}
+
+.room_row {
+  height: 45px;
+  text-align:center;
+  background: var(--transparent, var(--not-transparent));
+}
+
+#area-editor-pane>.room_row{
+    margin-left: 25%;
+}
+
+.object {
+  color: black;
+  background: red;
+  border-radius: 100%;
+  font-size: 200%;
+  border: none;
+}
+
+.wall {
+  color: grey;
+  background: grey;
+}
+
+.lawn {
+  color: lightgreen;
+  background: lightgreen;
+}
+
+.door {
+  color: green;
+  background: green;
+}
+
+.trail {
+  color: brown;
+  background: brown;
+}
+
+.poi {
+  color: black;
+  font-size: 200%;
+  background: yellow;
+  border: none;
+  border-radius: 100%;
+}
+
+.small-screen #blocks .object,
+.small-screen #blocks .poi{
+  font-size: 100%;
+}
+
+#area-size > .numberBox,
+#area-name > .stringBox {
+  transform: scale(0.7);
+  margin: -2%;
+}
+
+.editor-controls.full {
+  width: 100%;
+  height: 20%;
+  position: relative;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.editor-controls__item {
+  border: 1px solid black;
+  background: gray;
+  color: white;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: 20% 80%;
+  justify-items: center;
+  align-items: center;
+}
+
+.control__item__label {
+  background: var(--transparent, var(--not-transparent));
+}
+
+.editor-controls__buttons {
+  display: grid;
+  grid-auto-flow: column;
+  padding: 1%;
+  background: var(--transparent, var(--not-transparent));
+}
+
+.editor-controls__item > #area-name,
+.editor-controls__item > #area-size {
+  display: grid;
+  justify-items: center;
+  width: 100%;
+  background: var(--transparent, var(--not-transparent));
+}
+
+.editor-controls__item > * > .stringBox,
+.editor-controls__item > * > .numberBox {
+  background: lightgray;
+  width: 100%;
+  color: black;
+}
+
+.center_container {
+  display: grid;
+  width: 95%;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.editor-controls__item[type="outdoor"] > .center_container.indoor,
+.editor-controls__item[type="indoor"] > .center_container.outdoor {
+  display: none;
+}
+
+.center_boxes,
+.center_button {
+  display: grid;
+  grid-auto-flow: column;
+  justify-items: center;
+  padding: 1%;
+  width: 100%;
+
+  background: var(--transparent, var(--not-transparent));
+}
+
+.center_button > .btn {
+  width: 80px;
+}
+
+.btnDelete {
+  background: red;
+  color: white;
+}
+
+#area_clear_btn .__string {
+  background: none;
+}

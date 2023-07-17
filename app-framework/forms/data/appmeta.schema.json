@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "name": "appmeta",
+  "sortBy": "caption",
+  "properties": {
+    "language" : {
+      "type" : "string",
+      "name" : "language",
+      "description": "appmeta_language_description",
+      "enum" : ["en", "de"]
+    },
+    "caption" : {
+      "type" : "string",
+      "name" : "caption",
+      "description": "appmeta_name_description",
+      "minLength": 5,
+      "maxLength": 25
+    },
+    "image": {
+      "type": "object",
+      "name": "image",
+      "size" : 5,
+      "form" : "img",
+      "properties":{
+        "image_path" : {
+        "type" : "string",
+        "size" : 5,
+        "description": "image_path_description",
+        "media" : "image"
+        },
+        "image_name" : {
+          "type" : "string",
+          "name": "name",
+          "description": "image_name_description",
+          "minLength": 7,
+          "maxLength": 10
+        }
+      }
+    },
+    "audience" : {
+      "type" : "string",
+      "name" : "audience",
+      "description": "appmeta_audience_description",
+      "enum" : ["general", "adults", "students", "children"]
+    },
+    "content" : {
+      "type" : "string",
+      "name" : "content",
+      "description": "appmeta_content_description",
+      "enum" : ["guide", "explore"]
+    },
+    "content" : {
+      "type" : "string",
+      "name" : "content",
+      "description": "appmeta_content_description",
+      "enum" : ["guide", "explore"]
+    },
+    "colour": {
+      "type": "string",
+      "name" : "colour",
+      "description": "appmeta_colour_description",
+      "enum": ["gray", "orange", "green", "blue"]
+    },
+    "layout": {
+      "type": "string",
+      "enum": ["basic"]
+    }
+  },
+  "additionalProperties": false,
+  "required": ["layout"]
+}

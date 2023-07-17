@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "name": "object",
+  "sortBy" : "name",
+  "properties": {
+    "language" : {
+      "type" : "string",
+      "name" : "language",
+      "description": "page_language_description",
+      "enum" : ["en", "de"]
+    },
+    "name": {
+      "type": "string",
+      "name": "name",
+      "description": "object_name_description",
+      "minLength": 4,
+      "maxLength": 35
+    },
+    "image": {
+      "type": "object",
+      "name": "image",
+      "form" : "img",
+      "properties":{
+        "image_path" : {
+        "type" : "string",
+        "name": "image_path",
+        "description": "image_path_description",
+        "size" : 5,
+        "media" : "image"
+        },
+        "image_name" : {
+          "type" : "string",
+          "name": "name",
+          "description": "image_name_description",
+          "minLength": 7,
+          "maxLength": 10
+        }
+      }
+    },
+    "artist" :{
+      "type" : "string",
+      "name": "artist",
+      "description": "artist_description",
+      "minLength": 2,
+      "maxLength": 30
+    },
+    "creation_date": {
+      "type": "object",
+      "name": "creation_date",
+      "form" :"date",
+      "properties": {
+        "date": {
+          "type": "string",
+          "name": "creation_date",
+          "description": "creation_date_description",
+          "PCCRformat": "date"
+        },
+        "anno": {
+          "type": "string",
+          "name": "anno",
+          "description": "anno_description",
+          "enum": ["AD", "BC", "EMPTY"]
+        }
+      }
+    },
+    "era" :{
+      "type" : "string",
+      "name": "era",
+      "description": "era_description",
+      "minLength": 1,
+      "maxLength": 20
+    },
+    "size" :{
+      "type": "object",
+      "name": "size",
+      "form" :"size",
+      "properties": {
+        "measure": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 10000,
+          "name": "measure",
+          "description": "measure_description"
+        },
+        "unit": {
+          "type": "string",
+          "name": "unit",
+          "description": "unit_description",
+          "enum": ["mm", "cm", "m", "in"]
+        }
+      }
+    },
+    "text": {
+      "type": "string",
+      "name": "text",
+      "description": "object_text_description",
+      "minLength": 30,
+      "maxLength": 300
+    },
+    "layout": {
+      "type": "string",
+      "enum": ["text", "image", "info", "full"]
+
+    }
+  },
+  "additionalProperties": false,
+  "required": ["layout"]
+}

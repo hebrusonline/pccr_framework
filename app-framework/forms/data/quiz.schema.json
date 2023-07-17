@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "name": "quiz",
+  "sortBy": "question",
+  "properties": {
+    "language" : {
+      "type" : "string",
+      "name" : "language",
+      "description": "page_language_description",
+      "enum" : ["en", "de"]
+    },
+    "name": {
+      "type": "string",
+      "name": "name",
+      "description": "object_name_description",
+      "minLength": 5,
+      "maxLength": 15
+    },
+    "questions": {
+      "type": "array",
+      "name": "questions",
+      "description": "object_name_description"
+    },
+  "layout": {
+    "type": "string",
+    "enum": ["basic"]
+  }
+},
+  "additionalProperties": false,
+  "required": ["layout"]
+}

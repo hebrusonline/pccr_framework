@@ -1,0 +1,38 @@
+/* kss documentation */
+
+// StringInput
+//
+// The StringInput offers a field for entering a string.<br>
+// The input can be restricted by an enum field to appear as a dropdown selection.
+// <br>
+// It contains the following information:
+// <br>
+//  elemet              | description
+// ---------------------| ---------------
+//  {.form-placeholder} | label for the input string.
+//  {.stringInput}       | the input field.
+//  {.form-description} | contains text describing the desired input value.
+//  {.form-constraints} | contains text describing the constraints for the input field.
+//
+// The outer container has class {.stringBox}.
+//
+// Markup: ./templates/string-input.html
+//
+// Style guide: input.StringInput
+/* /END/  */
+
+* {}
+
+.stringBox {
+  display: grid;
+  grid-template: [row1-start] "placeholder placeholder placeholder" [row1-end] [row2-start] "stringInput stringInput stringInput" [row2-end] [row3-start] "description constraints constraints" [row3-end];
+  background-color: var(--transparent, var(--not-transparent));
+}
+
+.stringInput {
+  grid-area: stringInput;
+  font-size: 150%;
+  margin: 0.5%;
+  border-radius: 5px;
+  padding: 1%;
+}

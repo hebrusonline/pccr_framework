@@ -1,0 +1,56 @@
+/* kss documentation */
+
+// LocationInput
+//
+// Similar to the ImageInput the LocationInput relies on the ViewModel to properly function. <br>
+// Additionally, it depend on the external Google Maps API to provide the necessaray information, thus it apperas as an emoty box here. <br>
+// See the JavaScript documentation for details. <br>
+// <br>
+// It contains the following information:
+// <br>
+//  elemet              | description
+// ---------------------| ---------------
+//  {.form-placeholder} | label for the input text.
+//  {.locationInput}    | the input container.
+//  {#locationInput}    | the input field is replaced by the Google Maps API.
+//  {.form-description} | contains text describing the desired input value.
+//  {.form-constraints} | contains text describing the constraints for the input field.
+//
+// The outer container has class {.textBox}
+//
+// Markup: ./templates/location-input.html
+//
+// Style guide: input.LocationInput
+/* /END/  */
+
+* {}
+
+.locationBox {
+  display: grid;
+  grid-template: [row1-start] "placeholder . ." [row1-end] [row2-start] "locationInput locationInput locationInput" [row2-end] [row3-start] "description constraints constraints" [row3-end];
+  background-color: var(--transparent, var(--not-transparent));
+  justify-items: center;
+  align-items: center;
+}
+
+.form-placeholder{
+  justify-self: left !important;
+}
+
+.locationInput{
+  grid-area: locationInput;
+  height:280px;
+  width: 98%;
+  margin: 1%;
+
+}
+
+#locationInput{
+  height:100%;
+  width: 100%;
+}
+
+/* @override global background style: reset the background color for map elements */
+.locationInput *{
+  background-color:  initial;
+}

@@ -1,0 +1,38 @@
+/* kss documentation */
+// Appmeta Screen
+//
+//<h1>JSONSchema</h1>
+//<pre id="formOutput" src="../app-framework/forms/data/appmeta.schema.json"></pre>
+//
+// Style Guide: screen.Appmeta
+//
+
+// Basic Appmeta Screen
+//
+// <br>
+// The basic 'appmeta' screen contains the following elements:
+// <br>
+//
+//  element                  | description
+// --------------------------| ---------------
+//  {#caption}               | the title of the appmeta page.
+//  {#image}                 | the container for the image of the appmeta page.
+//  {#full-image}            | the image of the appmeta page.
+//  {.box-info}              | the container for meta data information.
+//  {#language}              | the language of the app.
+//  {#audience}              | the target audience of the app.
+//  {#content}               | the content type of the app.
+//  {#app-content-type}      | the container for the consumer navigation elements.
+//  {#colour}                | the color schema of the app.
+//  {#content-guide}         | visible if the app is in guide mode.
+//  {#content-explore}         | visible if the app is in explore mode.
+//
+// The outer container has class {.screen}
+//
+// Markup: ./templates/appmeta/basic.layout.html
+//
+// Style Guide: screen.Appmeta.Basic
+/* /END/  */
+
+* {
+}

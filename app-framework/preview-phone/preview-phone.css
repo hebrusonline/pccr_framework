@@ -1,0 +1,647 @@
+/* kss documentation */
+//App Screen
+//
+//<h2>JSONSchema</h2>
+//<pre id="formOutput" src="../app-framework/forms/data/basic.schema.json"></pre>
+//
+//<h2>Description</h2>
+// A template can use a subset of the available properties within a schema.
+// This grants flexibility for future insertions and puts less stress on the model to be 'finished'.
+// The power of NoSQL databases allows for that flexibility to accomodate multiple properties within one file that is easy to overlook.
+//
+// The 'screen' element is the basic visual builing block of the PCCR Framework. <br>
+// The underlying stucture always consists of the three elements
+// 'header', 'body', and 'footer', which wont be mentioned for the layouts below:
+// <br>
+//
+//  - The 'header' should contain central information to grasp the pages purpose.
+//  - The 'body' should contain the most improtant cotnent.
+//  - The 'footer' is reserved for navigation elements, and not furtehr discussed here.
+//
+// <br>
+// The 'screen' element contains the following components:
+// <br>
+// <br>
+//
+//  element                  | description
+// --------------------------| ---------------
+//  {.preview-phone__header} | the screen's 'header' element.
+//  {.phone-header-icon}     | the phone header icon indicates the page type.
+//  {.preview-phone__body}   | the screen's 'body' element.
+//  {.preview-phone__footer} | the screen's 'footer' element.
+//
+// The outer container needs to include the {.screen} class.
+//
+// Markup: ./basic.screen.html
+//
+// Style Guide: screen
+/* /END/  */
+
+* {
+}
+/* GENERAL */
+
+#phone-container {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+
+#grid-container {
+  grid-row-gap: 1%;
+}
+
+.marvel-device {
+  height: 470px !important;
+  width: 270px !important;
+  transform: scale(.95) !important;
+}
+
+.screen,
+.small-screen {
+  /* background: magenta !important; */
+  display: grid !important;
+  grid-template-rows: 10% 80% 10%;
+  height: 100% !important;
+  width: 100% !important;
+  font-size: 1em !important;
+  position: relative !important;
+  text-align: center !important;
+}
+
+.small-screen {
+  width: 150px;
+  border: 1px solid black;
+}
+
+.preview-phone__header {
+  background: darkgray;
+  /*blue*/
+  display: grid;
+  width: 100%;
+  max-width: 250px;
+}
+
+.small-screen > .preview-phone__header {
+  max-width: 150px;
+}
+
+#layoutContainer > .small-screen > .preview-phone__header {
+  width: 100%;
+  max-width: 100%;
+}
+
+.preview-phone__body {
+  background: lightyellow;
+  /*green*/
+  display: grid;
+  width: 100%;
+  max-width: 250px;
+}
+
+.small-screen > .preview-phone__body {
+  max-width: 150px;
+}
+
+#layoutContainer > .small-screen > .preview-phone__body {
+  width: 100%;
+  max-width: 100%;
+}
+
+.preview-phone__footer {
+  background: darkgray;
+  /*red*/
+  display: grid;
+  width: 100%;
+  max-width: 250px;
+}
+
+.small-screen > .preview-phone__footer {
+  max-width: 150px;
+}
+
+#layoutContainer > .small-screen > .preview-phone__footer {
+  width: 100%;
+  max-width: 100%;
+  padding: 2%;
+}
+
+.preview-phone__header > #caption {
+  background: var(--transparent, var(--not-transparent));
+}
+
+/* INFO Screen */
+
+.screen[type="info"] > .preview-phone__header {
+  grid-template-rows: 100%;
+  grid-template-columns: 25% 75%;
+  align-items: center;
+}
+
+.screen[type="info"] > .preview-phone__header > #logo {
+  height: 100%;
+  width: 100%;
+  background: var(--transparent, var(--not-transparent));
+}
+
+.screen[type="info"] > .preview-phone__header > #logo > #logo-image {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  background: var(--transparent, var(--not-transparent));
+}
+
+.screen[type="info"] > .preview-phone__header > #caption {
+  background: var(--transparent, var(--not-transparent));
+}
+
+.screen[type="info"] > .preview-phone__body {
+  grid-template-rows: 25% 35% 40%;
+  grid-template-columns: 100%;
+}
+
+.screen[type="info"] > .preview-phone__body > #image > #full-image {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.screen[type="info"] > .preview-phone__body > #map {
+  z-index: 101;
+  width: 100%;
+}
+
+.screen[type="info"] > .preview-phone__body > #map > #location {
+  height: 100%;
+  width: 100%;
+}
+
+/*  @override global background style: reset the background color for map elements  */
+
+.preview-phone__body > #map * {
+  background-color: initial;
+}
+
+.screen[type="info"] > .preview-phone__body > #text {
+  padding: 1%;
+}
+
+.small-screen[type="info"] > .preview-phone__header > #caption,
+.small-screen[type="info"] > .preview-phone__body > #text {
+  font-size: 0.8vw;
+  overflow: hidden;
+}
+
+/* HORUS Screen */
+
+.screen[type="hours"] > .preview-phone__header {
+  grid-template-rows: 100%;
+  grid-template-columns: 100%;
+  align-items: center;
+}
+
+.screen[type="hours"] > .preview-phone__header > #caption {
+  background: var(--transparent, var(--not-transparent));
+}
+
+.small-screen[type="hours"] > .preview-phone__header > #caption {
+  font-size: 0.8vw;
+  overflow: hidden;
+}
+
+.screen[type="hours"] > .preview-phone__body,
+.small-screen[type="hours"] > .preview-phone__body {
+  grid-template-columns: 100%;
+  overflow: auto;
+}
+
+.screen[type="hours"] > .preview-phone__body > .hours_day {
+  height: 100%;
+  border: 1px solid black;
+}
+
+.screen[type="hours"] > .preview-phone__body > .hours_day > .times {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.hours_day > .weekday {
+  font-weight: 900;
+}
+
+.hours_day > .times > #opening_time {
+  justify-self: end;
+}
+
+.hours_day > .times > #closing_time {
+  justify-self: start;
+}
+
+.hours_day > .times > #closing_time::before {
+    content: '-';
+    margin-right: 20px;
+}
+
+.hours_day[closed="false"] > .closed_box,
+.hours_day[closed="true"] > .times {
+  display: none !important;
+}
+
+.small-screen[type="hours"] > .preview-phone__body {
+  font-size: 0.8vw;
+  grid-row-gap: 0%;
+}
+
+/* ADMISSION Screen */
+
+.screen[type="admission"] > .preview-phone__header {
+  grid-template-rows: 100%;
+  grid-template-columns: 100%;
+  align-items: center;
+}
+
+.screen[type="admission"] > .preview-phone__header > #caption {
+  background: var(--transparent, var(--not-transparent));
+}
+
+.screen[type="admission"] > .preview-phone__body .rate_box > .price {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.screen[type="admission"] > .preview-phone__body div[id^="name"] {
+  font-weight: 900;
+}
+
+.screen[type="admission"] > .preview-phone__body div[id^="amount"] {
+  justify-self: end;
+}
+
+.screen[type="admission"] > .preview-phone__body div[id^="currency"] {
+  justify-self: start;
+}
+
+.rate_box {
+  border: 1px solid black;
+}
+
+.small-screen[type="admission"] > .preview-phone__body {
+  font-size: 0.8vw;
+  grid-row-gap: 0%;
+}
+
+.screen[type="admission"] > .preview-phone__body,
+.small-screen[type="admission"] > .preview-phone__body {
+  height: 100%;
+  overflow: auto;
+}
+
+/* APPMETA Screen */
+
+.screen[type="appmeta"] > .preview-phone__header {
+  grid-template-rows: 100%;
+  grid-template-columns: 100%;
+  align-items: center;
+}
+
+.screen[type="appmeta"] > .preview-phone__header > #caption {
+  background: var(--transparent, var(--not-transparent));
+}
+
+.screen[type="appmeta"] > .preview-phone__body {
+  grid-template-rows: 40% 10% 50%;
+}
+
+.screen[type="appmeta"] > .preview-phone__body > #image > #full-image {
+  padding: 1%;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.screen[type="appmeta"] > .preview-phone__body > .box-info {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+.screen[type="appmeta"] > .preview-phone__body > #text {
+  display: grid;
+  align-items: center;
+}
+
+.screen[type="appmeta"] > .preview-phone__body > .box-info > .meta-token {
+  border: 1px solid red;
+  margin: 5%;
+}
+
+.small-screen[type="appmeta"] > .preview-phone__body > .box-info > .meta-token {
+  font-size: 50% !important;
+}
+
+.screen[type="appmeta"] > .preview-phone__footer {
+  grid-auto-flow: column;
+  align-items: center;
+  font-size: 150%;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+}
+
+.small-screen[type="appmeta"] > .preview-phone__footer {
+  font-size: 100%;
+}
+
+/* OBJECT Screen */
+
+.screen[type="text"] > .preview-phone__header,
+.screen[type="object"] > .preview-phone__header,
+.screen[type="person"] > .preview-phone__header,
+.screen[type="event"] > .preview-phone__header,
+.screen[type="place"] > .preview-phone__header {
+  grid-template-rows: 100%;
+  grid-template-columns: 80% 20%;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+.screen[type="text"] > .preview-phone__header > #name,
+.screen[type="object"] > .preview-phone__header > #name,
+.screen[type="person"] > .preview-phone__header > #name,
+.screen[type="event"] > .preview-phone__header > #name,
+.screen[type="place"] > .preview-phone__header > #name {
+  background: var(--transparent, var(--not-transparent));
+}
+
+.screen[type="object"][layout="image"] > .preview-phone__body {
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 100%;
+}
+
+.screen[type="object"][layout="info"] > .preview-phone__body {
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 100%;
+}
+
+.screen[type="object"][layout="full"] > .preview-phone__body {
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 100%;
+}
+
+.screen[type="person"][layout="basic"] > .preview-phone__body {
+  grid-template-rows: 30% 30% 40%;
+  grid-template-columns: 100%;
+}
+
+.screen[type="person"][layout="image"] > .preview-phone__body {
+  grid-template-rows: 30% 20% 30% 20%;
+  grid-template-columns: 100%;
+}
+
+.screen[type="event"][layout="basic"] > .preview-phone__body {
+  grid-template-rows: 10% 10% 10% 30% 40%;
+  grid-template-columns: 100%;
+}
+
+.screen[type="place"][layout="basic"] > .preview-phone__body {
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 100%;
+}
+
+.screen[type="object"][layout="full"] > .preview-phone__body > .body-box {
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: 50% 50%;
+  grid-auto-flow: column;
+}
+
+.screen[type="object"] > .preview-phone__body > #text {
+  display: grid;
+  align-items: center;
+}
+
+.screen[type="text"] > .preview-phone__body > #text {
+  display: grid;
+  align-items: center;
+}
+
+.screen[type="object"] > .preview-phone__body #image {
+  /* display: grid;
+  align-items: center; */
+  height: 100%;
+  width: 100%;
+}
+
+.screen[type="person"] > .preview-phone__body #image {
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.screen[type="object"][layout="image"] > .preview-phone__body #full-image {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.screen[type="object"][layout="full"] > .preview-phone__body #full-image {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.screen[type="person"][layout="image"] > .preview-phone__body #full-image {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.screen[type="question"] > .preview-phone__body #full-image {
+  height: 25%;
+  width: 25%;
+  object-fit: contain;
+}
+
+.screen[type="object"][layout="full"] > .preview-phone__body #infobox {
+  font-size: 80%;
+}
+
+.screen[type="person"] > .preview-phone__body .info_box > .date {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.screen[type="event"] > .preview-phone__body .date {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.screen[type="object"] .preview-phone__body #infobox > .infobox-entry,
+.screen[type="object"] .preview-phone__body #infobox-full > .infobox-entry {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 15%;
+}
+
+.screen[type="object"] .preview-phone__body .infobox-entry > i {
+  font-size: 150%;
+}
+
+.small-screen[type="object"] .preview-phone__body .infobox-entry > i {
+  font-size: 100%;
+}
+
+.screen[type="object"] .preview-phone__body .infobox-entry > #size {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+/* PLACE */
+.screen[type="place"] > .preview-phone__body > #map {
+  z-index: 101;
+  width: 100%;
+}
+
+.screen[type="place"] > .preview-phone__body > #map > #location {
+  height: 100%;
+  width: 100%;
+}
+/* /PLACE */
+
+/* AREA Screen */
+
+.screen[type="room"] > .preview-phone__header {
+  grid-template-rows: 100%;
+  grid-template-columns: 80% 20%;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+.screen[type="room"] > .preview-phone__header > #name {
+  background: var(--transparent, var(--not-transparent));
+}
+
+.screen[type="room"] > .preview-phone__body {
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.screen[type="room"] > .preview-phone__body #blocks {
+  display: grid;
+  height: 60%;
+  width: 100%;
+  padding: 1%;
+  grid-auto-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.screen[type="room"] > .preview-phone__body .room_row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  height: 100%;
+  width: 90%;
+  background: var(--transparent, var(--not-transparent));
+  align-items: center;
+  justify-items: center;
+}
+
+.screen[type="room"] > .preview-phone__body .room_block {
+  height: 100%;
+  width: 100%;
+}
+
+.screen[type="room"] > .preview-phone__body .room_block.object {
+  font-size: 1em;
+}
+
+/* QUIZ Screen */
+
+.screen[type="quiz"] > .preview-phone__header {
+  grid-template-rows: 100%;
+  grid-template-columns: 80% 20%;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+.screen[type="quiz"] > .preview-phone__header > #name {
+  background: var(--transparent, var(--not-transparent));
+}
+
+.screen[type="quiz"] > .preview-phone__body {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  height: 100%;
+}
+
+.screen[type="quiz"] > .preview-phone__body #questions {
+  height: 100%;
+  width: 100%;
+  background: var(--transparent, var(--not-transparent));
+}
+
+.screen[type="quiz"] > .preview-phone__body #questions .number_of_questions {
+  height: 60%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background: var(--transparent, var(--not-transparent));
+}
+
+.screen[type="question"] > .preview-phone__body {
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 50% 50%;
+  align-items: center;
+  justify-items: center;
+}
+
+.screen[type="question"][layout="image"] > .preview-phone__body {
+  grid-template-rows: 25% 25% 50%;
+}
+
+.screen[type="question"] > .preview-phone__body .question {
+  height: 100%;
+  width: 100%;
+  background: green;
+  font-size: 1.5em;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.screen[type="question"] > .preview-phone__body #question,
+.screen[type="question"] > .preview-phone__body .answer {
+  height: 90%;
+  width: 90%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  border: 1px solid black;
+}
+
+.screen[type="question"] > .preview-phone__body .answers {
+  height: 100%;
+  width: 90%;
+
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  justify-items: center;
+}
+
+.screen[type="question"] > .preview-phone__body .answer.right {
+  background: green;
+}
+
+.screen[type="question"] > .preview-phone__body .answer.wrong {
+  background: red;
+}

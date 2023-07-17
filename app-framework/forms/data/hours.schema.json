@@ -1,0 +1,265 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "name": "hours",
+  "sortBy": "caption",
+  "properties": {
+    "language" : {
+      "type" : "string",
+      "name" : "language",
+      "description": "page_language_description",
+      "enum" : ["en", "de"]
+    },
+    "caption" : {
+      "type" : "string",
+      "name": "caption",
+      "description": "hours_caption_description",
+      "minLength": 5,
+      "maxLength": 25
+    },
+    "monday" : {
+      "type" : "object",
+      "name": "monday",
+      "form" : "time",
+      "properties":{
+        "opening_time": {
+          "type": "string",
+          "name": "opening_time",
+          "description": "opening_time_description",
+          "format": "time"
+        },
+        "closing_time": {
+          "type": "string",
+          "name": "closing_time",
+          "description": "closing_time_description",
+          "format": "time"
+        },
+        "closed": {
+          "type": "boolean",
+          "name": "closed",
+          "description": "closed_description",
+          "enum" : [true]
+        }
+      },
+      "oneOf": [
+       {
+           "required": ["closed"]
+       },
+       {
+           "required": ["opening_time", "closing_time"]
+       }
+     ],
+     "additionalProperties": false
+    },
+    "tuesday" : {
+      "type" : "object",
+      "name": "tuesday",
+      "form" : "time",
+      "properties":{
+        "opening_time": {
+          "type": "string",
+          "name": "opening_time",
+          "description": "opening_time_description",
+          "format": "time"
+        },
+        "closing_time": {
+          "type": "string",
+          "name": "closing_time",
+          "description": "closing_time_description",
+          "format": "time"
+        },
+        "closed": {
+          "type": "boolean",
+          "name": "closed",
+          "description": "closed_description",
+          "enum" : [true]
+        }
+      },
+      "oneOf": [
+       {
+           "required": ["closed"]
+       },
+       {
+           "required": ["opening_time", "closing_time"]
+       }
+     ],
+     "additionalProperties": false
+    },
+    "wednesday" : {
+      "type" : "object",
+      "name": "wednesday",
+      "form" : "time",
+      "properties":{
+        "opening_time": {
+          "type": "string",
+          "name": "opening_time",
+          "description": "opening_time_description",
+          "format": "time"
+        },
+        "closing_time": {
+          "type": "string",
+          "name": "closing_time",
+          "description": "closing_time_description",
+          "format": "time"
+        },
+        "closed": {
+          "type": "boolean",
+          "name": "closed",
+          "description": "closed_description",
+          "enum" : [true]
+        }
+      },
+      "oneOf": [
+       {
+           "required": ["closed"]
+       },
+       {
+           "required": ["opening_time", "closing_time"]
+       }
+     ],
+     "additionalProperties": false
+    },
+    "thursday" : {
+      "type" : "object",
+      "name": "thursday",
+      "form" : "time",
+      "properties":{
+        "opening_time": {
+          "type": "string",
+          "name": "opening_time",
+          "description": "opening_time_description",
+          "format": "time"
+        },
+        "closing_time": {
+          "type": "string",
+          "name": "closing_time",
+          "description": "closing_time_description",
+          "format": "time"
+        },
+        "closed": {
+          "type": "boolean",
+          "name": "closed",
+          "description": "closed_description",
+          "enum" : [true]
+        }
+      },
+      "oneOf": [
+       {
+           "required": ["closed"]
+       },
+       {
+           "required": ["opening_time", "closing_time"]
+       }
+     ],
+     "additionalProperties": false
+    },
+    "friday" : {
+      "type" : "object",
+      "name": "friday",
+      "form" : "time",
+      "properties":{
+        "opening_time": {
+          "type": "string",
+          "name": "opening_time",
+          "description": "opening_time_description",
+          "format": "time"
+        },
+        "closing_time": {
+          "type": "string",
+          "name": "closing_time",
+          "description": "closing_time_description",
+          "format": "time"
+        },
+        "closed": {
+          "type": "boolean",
+          "name": "closed",
+          "description": "closed_description",
+          "enum" : [true]
+        }
+      },
+      "oneOf": [
+       {
+           "required": ["closed"]
+       },
+       {
+           "required": ["opening_time", "closing_time"]
+       }
+     ],
+     "additionalProperties": false
+    },
+    "saturday" : {
+      "type" : "object",
+      "name": "saturday",
+      "form" : "time",
+      "properties":{
+        "opening_time": {
+          "type": "string",
+          "name": "opening_time",
+          "description": "opening_time_description",
+          "format": "time"
+        },
+        "closing_time": {
+          "type": "string",
+          "name": "closing_time",
+          "description": "closing_time_description",
+          "format": "time"
+        },
+        "closed": {
+          "type": "boolean",
+          "name": "closed",
+          "description": "closed_description",
+          "enum" : [true]
+        }
+      },
+      "oneOf": [
+       {
+           "required": ["closed"]
+       },
+       {
+           "required": ["opening_time", "closing_time"]
+       }
+     ],
+     "additionalProperties": false
+    },
+    "sunday" : {
+      "type" : "object",
+      "name": "sunday",
+      "form" : "time",
+      "properties":{
+        "opening_time": {
+          "type": "string",
+          "name": "opening_time",
+          "description": "opening_time_description",
+          "format": "time"
+        },
+        "closing_time": {
+          "type": "string",
+          "name": "closing_time",
+          "description": "closing_time_description",
+          "format": "time"
+        },
+        "closed": {
+          "type": "boolean",
+          "name": "closed",
+          "description": "closed_description",
+          "enum" : [true]
+        }
+      },
+      "oneOf": [
+       {
+           "required": ["closed"]
+       },
+       {
+           "required": ["opening_time", "closing_time"]
+       }
+     ],
+     "additionalProperties": false
+    },
+    "layout": {
+      "type": "string",
+      "enum": ["basic"]
+    }
+  },
+  "additionalProperties": false,
+  "required": ["layout"]
+}

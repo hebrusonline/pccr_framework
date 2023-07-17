@@ -1,0 +1,114 @@
+/* kss documentation */
+// Object Screen
+//
+//<h1>JSONSchema</h1>
+//<pre id="formOutput" src="../app-framework/forms/data/object.schema.json"></pre>
+//
+// Style Guide: screen.Object
+//
+
+// Text Object Screen
+//
+// <br>
+// The text 'object' contains the following elements:
+// <br>
+//
+//  element                  | description
+// --------------------------| ---------------
+//  {#name}                  | the title of the page.
+//  {#text}                  | the object's text.
+//
+// The outer container has class {.screen}
+//
+// Markup: ./templates/object/text.layout.html
+//
+// Style guide: screen.Object.Text
+/* /END/  */
+
+* {
+}
+
+// Image Object Screen
+//
+// <br>
+// The image 'object' contains the following elements:
+// <br>
+//
+//  element                  | description
+// --------------------------| ---------------
+//  {#name}                  | the title of the page.
+//  {#image}                 | the container for the page image.
+//  {#full-image}            | the page image.
+//  {#text}                  | the object's text.
+//
+// The outer container has class {.screen}
+//
+// Markup: ./templates/object/image.layout.html
+//
+// Style guide: screen.Object.Image
+/* /END/  */
+
+* {
+}
+
+// Info Object Screen
+//
+// <br>
+// The info 'object' screen contains the following elements:
+// <br>
+//
+//  element                  | description
+// --------------------------| ---------------
+//  {#name}                  | the title of the page.
+//  {#infobox}               | the container for the oblect information.
+//  {.infobox-entry}         | an element of the infobox.
+//  {#artist}                | the object's artist.
+//  {#creation_date}         | the object's creation date.
+//  {#anno}                  | the object's creation date's bc/ad modifider.
+//  {#era}                   | the era of the object.
+//  {#size}                  | the container for the object's size.
+//  {#measure}               | the object's size measure.
+//  {#unit}                  | the object's size measure's unit.
+//  {#text}                  | the object's text.
+//
+// The outer container has class {.screen}
+//
+// Markup: ./templates/object/info.layout.html
+//
+// Style guide: screen.Object.Info
+/* /END/  */
+
+* {
+}
+
+// Full Object Screen
+//
+// <br>
+// The full 'object' screen contains the following elements:
+// <br>
+//
+//  element                  | description
+// --------------------------| ---------------
+//  {#name}                  | the title of the page.
+//  {#image}                 | the container for the page image.
+//  {#full-image}            | the page image.
+//  {#infobox}               | the container for the oblect information.
+//  {.infobox-entry}         | an element of the infobox.
+//  {#artist}                | the object's artist.
+//  {#creation_date}         | the object's creation date.
+//  {#anno}                  | the object's creation date's bc/ad modifider.
+//  {#era}                   | the era of the object.
+//  {#size}                  | the container for the object's size.
+//  {#measure}               | the object's size measure.
+//  {#unit}                  | the object's size measure's unit.
+//  {#text}                  | the object's text.
+//
+// The outer container has class {.screen}
+//
+// Markup: ./templates/object/full.layout.html
+//
+// Style guide: screen.Object.Full
+/* /END/  */
+
+* {
+}

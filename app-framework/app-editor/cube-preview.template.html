@@ -1,0 +1,28 @@
+<div class="template">
+  <!-- Holds the preview for the interaction and media pages. -->
+  <div class="preview_split">
+    <div id="preview__top" class="preview_pane">
+      <div class="preview_pane__header">
+        ${UI.createIconBox('top').innerHTML}
+      </div>
+      <div class="preview_pane__body">
+        <div id="preview_content"></div>
+      </div>
+    </div>
+    <div id="preview__behind" class="preview_pane">
+      <div class="preview_pane__header">
+        ${UI.createIconBox('behind').innerHTML}
+      </div>
+      <div class="preview_pane__body preview_gallery"></div>
+    </div>
+  </div>
+  <!-- Holds the preview for the related pages. -->
+  <div id="preview__bottom" class="preview_pane">
+    <div class="preview_pane__header">
+      ${UI.createIconBox('bottom').innerHTML}
+    </div>
+    <div class="preview_pane__body">
+      <div id="preview_content"></div>
+    </div>
+  </div>
+</div>

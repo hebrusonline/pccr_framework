@@ -1,0 +1,244 @@
+{
+  "types": {
+    "object_type": "Object",
+    "text_type": "Text",
+    "info_type": "Info",
+    "hours_type": "Hours",
+    "person_type" : "Person",
+    "event_type" : "Event",
+    "admission_type": "Admission",
+    "quiz_type": "Quiz",
+    "question_type": "Question",
+    "appmeta_type" : "App Meta Information"
+  },
+  "object": {
+    "object_name_description": "The name of the object.",
+    "object_text_description": "A text to describe the object."
+  },
+  "person": {
+    "person_name_description": "The name of the person.",
+    "person_text_description": "The text describing the person.",
+    "birth_date_description_0": "The birt hdate of the person.",
+    "birth_date_description_1": "The birt year of the person.",
+    "birth_date_description_2": "The birth date of the Person.",
+    "death_date_description_0": "The death date of the person.",
+    "death_date_description_1": "The death year of the person.",
+    "death_date_description_2": "The death date of the person.",
+    "person_keyword_description": "A keyword for the person."
+  },
+  "event": {
+    "event_name_description": "The name of the event.",
+    "event_text_description": "The text describing the event.",
+    "start_date_description" : "The date the event started.",
+    "end_date_description" : "The date the event ended.",
+    "event_location_description" : "The location the event happened",
+    "event_keyword_description" : "A keyword describing the event.",
+    "event_text_description" : "A text describing the event."
+  },
+  "text": {
+    "text_name_description" : "A headline.",
+    "text_text_description" : "A text."
+  },
+  "place": {
+    "place_name_description": "The name of the place.",
+    "place_location_description" : "The location to fit the place.",
+    "place_text_description": "The text describing the place.",
+    "event_location_description" : "The location the event happened"
+  },
+  "info": {
+    "info_caption_description": "The text to appear on top of the page.",
+    "info_logo_description": "The logo to appear on top of the page (Best to be square!).",
+    "info_image_description": "The image to appear below the header.",
+    "info_location_description" : "The location to fit the information page.",
+    "info_text_description": "The text for the info page."
+  },
+  "hours": {
+    "hours_caption_description": "The text to appear on top of the page.",
+    "opening_time_description": "The time you open.",
+    "closing_time_description": "The time you close."
+  },
+  "admission": {
+    "admission_caption_description": "The text to appear on top of the page.",
+    "rate_name_description": "The Name of the applicable group.",
+    "rate_amount_description": "The payable amount.",
+    "rate_currency_description": "The payable currancy."
+  },
+  "appmeta":{
+    "appmeta_name_description" : "The App title.",
+    "appmeta_audience_description" : "The target audience of the app.",
+    "appmeta_content_description" : "The content of the app.",
+    "appmeta_text_description" : "The app description.",
+    "appmeta_language_description" : "The app language.",
+    "appmeta_colour_description" : "The app colour schema."
+  },
+  "quiz": {
+    "quiz_question_description": "Enter a quiz question.",
+    "quiz_right_description": "Enter the right answer to the question.",
+    "quiz_false_description": "Enter a false answer."
+  },
+  "weekdays": {
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday"
+  },
+  "labels": {
+    "confirm_meta_entry" : "Are you sure? The entered information cannot be changed!",
+    "confirm_cube_entry" : "Are you sure? The entered information cannot be changed!",
+    "alert_app_success" : "The app was created successfully. Visit the Dashboard to activate the app!",
+    "alertErrorSubmission" : "Submission Error! Check the 'RAW' tab for details!",
+    "alertErrorAppSubmission" : "Check the entered numbers!",
+    "error_entry" : "An error occurred! Please check the entered information.",
+    "activity_weekday" : "Activity by weekday",
+    "activity_hour" : "Activity by hour",
+    "activity_type" : "Activity by page type",
+    "activity_page" : "Activity by page",
+    "activity" : "Activity",
+    "name": "Name",
+    "audience": "Audience",
+    "caption": "Caption",
+    "content": "Content",
+    "language": "Language",
+    "location": "Location",
+    "opening_time": "Opening Time",
+    "closing_time": "Closing Time",
+    "closed": "Closed this day? (Y/N)",
+    "rate": "Rate",
+    "amount": "Amount",
+    "choose" : "Please choose:",
+    "currency": "Currency",
+    "creation_date": "Creation Date",
+    "century": ". cent. ",
+    "artist": "Artist",
+    "anno": "BC/AD",
+    "anno_start": "Count",
+    "anno_end": "Count",
+    "anno_birth": "Count",
+    "anno_death": "Count",
+    "era": "Era",
+    "size": "Size",
+    "measure": "Measure",
+    "unit": "Unit",
+    "//": "===================================================================",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "text": "Text",
+    "colour": "Colour Schema",
+
+    "keywords" : "Keywords",
+    "keyword" : "Keyword",
+    "birth_date": "Birth Date",
+    "death_date": "Death Date",
+
+    "start_date": "Start Date",
+    "end_date": "End Date",
+    "location_name" : "Location Name",
+
+    "image" : "Image",
+    "image_path" : "Image Path",
+    "logo" : "Logo",
+    "cooseFile": "Choose a file",
+    "add": "Add",
+    "commit": "Commit",
+    "commitChanges": "Commit Changes",
+
+    "question": "Question",
+    "right": "Right answer",
+    "false_1": "First wrong answer",
+    "false_2": "Second wrong answer",
+    "false_3": "Third wrong answer",
+
+    "de" : "German",
+    "en" : "English",
+    "AD" : "AD",
+    "BC" : "BC",
+    "EMPTY" : "n/a",
+    "mm" : "mm",
+    "cm" : "cm",
+    "m" : "m",
+    "in" : "in",
+    "€" : "€",
+    "$" : "$",
+    "£" : "£",
+    "Kč" : "Kč",
+
+    "adults" : "adults",
+    "children" : "children",
+    "students" : "students",
+    "general" : "general",
+
+    "explore" : "explore",
+    "guide" : "guide",
+
+    "gray" : "gray",
+    "orange" : "orange",
+    "blue" : "blue",
+    "green" : "green",
+
+    "commitCube" : "Save CUBE",
+
+    "enable" : "enable",
+    "disable": "disable",
+    "preview": "preview",
+    "change": "change",
+    "delete": "DELETE",
+    "btnConfirmDeleteApp" : "Yes, delete the app.",
+    "btnCancelDeleteApp" : "No, keep the app.",
+
+
+    "date_tab_label_0" : "Exact",
+    "date_tab_label_1" : "Range",
+    "date_tab_label_2" : "Freeform",
+    "first_quarter" : "First",
+    "second_quarter" : "Second",
+    "third_quarter" : "Third",
+    "fourth_quarter" : "Fourth",
+    "first_third" : "First",
+    "second_third" : "Second",
+    "third_third" : "Third",
+    "first_half" : "First",
+    "second_half" : "Second",
+    "date_year_only": "Year only",
+    "date_century" : "Century Only",
+    "quarter" : "Quarter",
+    "third": "Third",
+    "half": "Half",
+    "modifier": "Modification",
+
+    "total" : "total",
+    "unique" : "unique"
+  },
+  "descriptions": {
+    "creation_date_description_0": "The creation date.",
+    "creation_date_description_1": "The creation year.",
+    "creation_date_description_2": "The creation date.",
+    "anno_description": "Date: \"Before Christ\" or  \"Anno Domini\"?",
+    "//": "===================================================================",
+
+    "page_language_description" : "The language of the page.",
+
+    "closed_description": "Is the museum closed that day?",
+    "image_path_description" : "The path to the image file.",
+    "image_name_description" : "The name of the chosen image.",
+    "artist_description" : "The responsible artist/creator.",
+    "era_description" : "The applicable era.",
+    "measure_description" : "The measure of the object.",
+    "unit_description" : "The unit of the measurement."
+  },
+  "constraints": {
+    "text_constraints": "Input a {type} with a minimum of {min} characters, and a maximum of {max} characters!",
+    "string_constraints": "Input a {type} with a minimum of {min} characters, and a maximum of {max} characters!",
+    "number_constraints": "Input a {type} between {min} and {max}!",
+    "date_constraints_0": "Choose a date.",
+    "date_constraints_1": "Enter a year and choose the desired phase.",
+    "date_constraints_2": "Enter a freeform date (should be avoided, if possible).",
+    "enum_constraints": "Select one value from the list.",
+    "file_constraints": "Select an image that is either a JPEG or PNG with a maximum size of {size} MB.",
+    "location_constraints": "Select a valid location by dragging the pin.",
+    "time_constraints": "Select a valid time.",
+    "boolean_constraints": "Use the checkbox."
+  }
+}

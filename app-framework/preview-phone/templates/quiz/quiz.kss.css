@@ -1,0 +1,31 @@
+/* kss documentation */
+// Quiz Screen
+//
+//<h1>JSONSchema</h1>
+//<pre id="formOutput" src="../app-framework/forms/data/quiz.schema.json"></pre>
+//
+// Style Guide: screen.Quiz
+//
+
+// Basic Quiz Screen
+//
+// <br>
+// The basic 'quiz' screen contains the following elements:
+// <br>
+//
+//  element                  | description
+// --------------------------| ---------------
+//  {#name}                  | the page title.
+//  {#questions}             | the content container.
+//  {.number_of_questions}   | the number of questions in the quiz.
+//  {.button btn}            | the button to start the quiz.
+//
+// The outer container has class {.screen}
+//
+// Markup: ./templates/quiz/basic.layout.html
+//
+// Style guide: screen.Quiz.Basic
+/* /END/  */
+
+* {
+}

@@ -1,0 +1,98 @@
+<div id="date" class="template">
+
+  <div class="date_tabs">
+
+    <div class="date_tab">
+      <input type="radio" class="tab_radio _tab1" id="_tab-1" name="tab-group-" checked>
+      <label class="tab_label" for="_tab-1">Exact</label>
+
+      <div class="date_content">
+        <div class="dateBox pccr-data">
+          <label class="form-placeholder">DATE</label>
+          <input class="dateInput" type="date" />
+          <div class="form-description">Description</div>
+          <div class="form-constraints">Constraints</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="date_tab">
+      <input type="radio" class="tab_radio _tab2" id="_tab-2" name="tab-group-">
+      <label class="tab_label" for="_tab-2">Range</label>
+
+      <div class="date_content">
+        <div class="dateBox pccr-data">
+          <label class="form-placeholder">DATE</label>
+          <input type="number" class="dateInput" min="0" max="9999">
+          <div class="form-description">Description</div>
+          <div class="form-constraints">Constraints</div>
+        </div>
+
+        <div id="date_ranges">
+          <div class="date_range">
+            <div class="date_quarter">
+              <div class="date_mod_header">
+                Quarter
+              </div>
+              <input type="radio" id="first_quarter" name="date_range" />
+              <label for="first_quarter">First</label>
+              <input type="radio" id="second_quarter" name="date_range" />
+              <label for="second_quarter">Second</label>
+              <input type="radio" id="third_quarter" name="date_range" />
+              <label for="third_quarter">Third</label>
+              <input type="radio" id="fourth_quarter" name="date_range" />
+              <label for="fourth_quarter">Fourth</label>
+            </div>
+            <div class="date_third">
+              <div class="date_mod_header">
+                Third
+              </div>
+              <input type="radio" id="first_third" name="date_range" />
+              <label for="first_third">First</label>
+              <input type="radio" id="second_third" name="date_range" />
+              <label for="second_third">Second</label>
+              <input type="radio" id="third_third" name="date_range" />
+              <label for="third_third">Third</label>
+            </div>
+            <div class="date_half">
+              <div class="date_mod_header">
+                Half
+              </div>
+              <input type="radio" id="first_half" name="date_range" />
+              <label for="first_half">First</label>
+              <input type="radio" id="second_half" name="date_range" />
+              <label for="second_half">Second</label>
+            </div>
+          </div>
+          <div class="date_open">
+            <div class="date_mod_header">
+              Modifier
+            </div>
+
+            <input type="checkbox" id="date_year_only" />
+            <label for="date_year_only">Year Only</label>
+            <input type="checkbox" id="date_century" />
+            <label for="date_century">Century</label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="date_tab">
+      <input type="radio" class="tab_radio _tab3" id="_tab-3" name="tab-group-">
+      <label class="tab_label" for="_tab-3">Free</label>
+
+      <div class="date_content">
+        <div class="dateBox pccr-data">
+          <label class="form-placeholder">DATE</label>
+          <input class="dateInput" maxlength="10" />
+          <div class="form-description">Description</div>
+          <div class="form-constraints">Constraints</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

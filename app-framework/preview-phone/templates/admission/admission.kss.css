@@ -1,0 +1,34 @@
+/* kss documentation */
+// Admission Screen
+//
+//<h1>JSONSchema</h1>
+//<pre id="formOutput" src="../app-framework/forms/data/admission.schema.json"></pre>
+//
+// Style Guide: screen.Admission
+//
+
+// Basic Admission Screen
+//
+// <br>
+// The 'basic' style admission screen contains the following information:
+// <br>
+//
+//  element                  | description
+// --------------------------| ---------------
+//  {#caption}               | the headline for the admission page.
+//  {.__array}               | an array element containing multiple elements.
+//  {#rate .rate_box}        | the container surrounding the rate object.
+//  {#name}                  | the name of a specific rate.
+//  {.price}                 | the container surrounding the price object.
+//  {#ammount}               | the ammount of the rate.
+//  {#currencey}             | the currency of the rate.
+//
+// The outer container needs to include the {.screen} class.
+//
+// Markup: ./templates/admission/basic.layout.html
+//
+// Style Guide: screen.Admission.Basic
+/* /END/  */
+
+* {
+}

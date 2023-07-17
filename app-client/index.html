@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta name="viewport" content="initial-scale=1.0"> -->
+  <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Museum App</title>
+  <link rel="manifest" crossorigin="use-credentials" href="manifest.json">
+  <link rel="icon" href="favicon.ico">
+
+  <!-- Analytics -->
+  <script src="analytics.js"></script>
+
+  <!-- firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+  <link href="list-style.css" rel="stylesheet" type="text/css">
+
+  <!-- load fontawesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <script src="dash-item.class.js"></script>
+
+</head>
+
+  <div id="app__content">
+    <header id="app__header">
+      <i id="btn__menu" class="fas fa-bars fa-2x"></i>
+      <img src="assets/visit.png" alt="visit_logo">
+    </header>
+    <div id="app__body">
+      <ul id=app-list></ul>
+    </div>
+    <footer id="app__footer">
+      <img src="assets/interreg.png" alt="interreg_logo">
+      <div id="btn__imprint" class="nav__icon"><i class="fa-fw fas fa-balance-scale"></i></div>
+    </footer>
+  </div>
+  <div id="imprint_box" class="hidden">
+    <pre>
+    <h1>Impressum</h1>
+    Informationspflicht laut § 5 TMG.
+
+    Tobias Baumgärtner
+
+    Innstraße 43
+    94032 Passau
+    Deutschland
+
+    Tel.: o8515o92594
+
+    E-Mail: tobias.baumgaertner@uni-passau.de
+
+    <h2>EU-Streitschlichtung</h2>
+    Gemäß Verordnung über Online-Streitbeilegung in Verbraucherangelegenheiten (ODR-Verordnung) möchten wir Sie über die Online-Streitbeilegungsplattform (OS-Plattform) informieren.
+    Verbraucher haben die Möglichkeit, Beschwerden an die Online Streitbeilegungsplattform der Europäischen Kommission unter http://ec.europa.eu/odr?tid=321157892 zu richten.
+
+    Wir möchten Sie jedoch darauf hinweisen, dass wir nicht bereit oder verpflichtet sind, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+
+    <h2>Haftung für Inhalte dieser Website</h2>
+    Die Inhalte dieser Webseite werden ständig weiter entwickelt und wir bemühen uns korrekte und aktuelle Informationen bereitzustellen.
+    Laut Telemediengesetz (TMG) §7 (1) sind wir als Diensteanbieter für eigene Informationen, die wir zur Nutzung bereitstellen, nach den allgemeinen Gesetzen verantwortlich.
+    Leider können wir keine Haftung für die Korrektheit aller Inhalte auf dieser Webseite übernehmen, speziell für jene die seitens Dritter bereitgestellt wurden.
+    Als Diensteanbieter im Sinne der §§ 8 bis 10 sind wir nicht verpflichtet,
+    die von ihnen übermittelten oder gespeicherten Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+
+    Unsere Verpflichtungen zur Entfernung von Informationen oder zur Sperrung der Nutzung von Informationen
+    nach den allgemeinen Gesetzen aufgrund von gerichtlichen oder behördlichen Anordnungen
+    bleiben auch im Falle unserer Nichtverantwortlichkeit nach den §§ 8 bis 10 unberührt.
+
+    Sollten Ihnen problematische oder rechtswidrige Inhalte auffallen, bitte wir Sie uns umgehend zu kontaktieren,
+    damit wir die rechtswidrigen Inhalte entfernen können. Sie finden die Kontaktdaten im Impressum.
+
+    <h2>Haftung für Links auf dieser Website</h2>
+    Unsere Webseite enthält Links zu Webseiten dritter für deren Inhalt wir nicht verantwortlich sind.
+    Haftung für verlinkte Websites besteht für uns nicht, da wir keine Kenntnis rechtswidriger Tätigkeiten hatten und haben,
+    uns solche Rechtswidrigkeiten auch bisher nicht aufgefallen sind und wir Links sofort entfernen würden, wenn uns Rechtswidrigkeiten bekannt werden.
+
+    Wenn Ihnen rechtswidrige Links auf unserer Website auffallen, bitte wir Sie uns zu kontaktieren.
+
+    <h2>Urheberrechtshinweis</h2>
+    Alle Inhalte dieser Webseite (Bilder, Fotos, Texte, Videos) unterliegen dem Urheberrecht der Bundesrepublik Deutschland.
+    Bitte fragen Sie uns bevor Sie die Inhalte dieser Website verbreiten,
+    vervielfältigen oder verwerten wie zum Beispiel auf anderen Websites erneut veröffentlichen.
+    Falls notwendig, werden wir die unerlaubte Nutzung von Teilen der Inhalte unserer Seite rechtlich verfolgen.
+
+    Sollten Sie auf dieser Webseite Inhalte finden, die das Urheberrecht verletzen, bitten wir Sie uns zu kontaktieren.
+
+    <h1>Datenschutzerklärung</h1>
+    <h2>Datenschutz</h2>
+    Diese Datenschutzerklärung (Fassung 01.03.2020-321157892) entspricht den Vorgaben der Datenschutz-Grundverordnung (EU) 2016/679.
+    Der Inhalt gibt Aufschluss darüber welche Informationen wir sammeln,
+    wie wir Daten verwenden und welche Entscheidungsmöglichkeiten Sie als Besucher dieser Webseite haben.
+
+    <h2>Rechte laut Datenschutzgrundverordnung</h2>
+    Laut den Bestimmungen der DSGVO stehen Ihnen die folgende Rechte zu:
+
+    Recht auf Berichtigung (Artikel 16 DSGVO)
+    Recht auf Löschung („Recht auf Vergessenwerden“) (Artikel 17 DSGVO)
+    Recht auf Einschränkung der Verarbeitung (Artikel 18 DSGVO)
+    Recht auf Benachrichtigung – Mitteilungspflicht im Zusammenhang mit der Berichtigung oder Löschung personenbezogener Daten oder der Einschränkung der Verarbeitung (Artikel 19 DSGVO)
+    Recht auf Datenübertragbarkeit (Artikel 20 DSGVO)
+    Widerspruchsrecht (Artikel 21 DSGVO)
+    Recht, nicht einer ausschließlich auf einer automatisierten Verarbeitung — einschließlich Profiling — beruhenden Entscheidung unterworfen zu werden (Artikel 22 DSGVO)
+
+    Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt oder Ihre datenschutzrechtlichen Ansprüche sonst in einer Weise verletzt worden sind,
+    können Sie sich an die Bundesbeauftragte für den Datenschutz und die Informationsfreiheit (BfDI) wenden.
+
+    <h2>Auswertung des Besucherverhaltens</h2>
+    In der folgenden Datenschutzerklärung informieren wir Sie darüber, ob und wie wir Daten Ihres Besuchs dieser Website auswerten.
+    Die Auswertung der gesammelten Daten erfolgt in der Regel anonym und es ist nicht möglich von Ihrem Verhalten auf dieser Website auf Ihre Person zu schließen.
+
+    <h2>TLS-Verschlüsselung mit https</h2>
+    Wir verwenden https um Daten abhörsicher im Internet zu übertragen (Datenschutz durch Technikgestaltung Artikel 25 Absatz 1 DSGVO).
+    Durch den Einsatz von TLS (Transport Layer Security), einem Verschlüsselungsprotokoll zur sicheren Datenübertragung im Internet können wir den Schutz vertraulicher Daten sicherstellen.
+    Sie erkennen die Benutzung dieser Absicherung der Datenübertragung am kleinen Schloßsymbol links oben im Browser und der Verwendung des Schemas https (anstatt http) als Teil unserer Internetadresse.
+
+    <h1>Google Maps Datenschutzerklärung</h1>
+    Die Website nutzt Google Maps der Firma Google Inc. (1600 Amphitheatre Parkway Mountain View, CA 94043, USA).
+    Mit Google Maps ist es möglich Standorte visuell darzustellen.
+    Durch die Verwendung von Google Maps werden Daten an Google übertragen und auf den Google-Servern gespeichert.
+
+    Google Maps ist ein Online-Kartendienst der Firma Google Inc.
+    Mit Google Maps können Sie im Internet über einen PC oder über eine App genaue Standorte von Städten, Sehenswürdigkeiten, Unterkünften oder Unternehmen suchen.
+    Um  die Anfahrtsmöglichkeit anzuzeigen, können Kartenausschnitte eines Standorts per HTML-Code in eine Website eingebunden werden.
+    Google Maps zeigt die Erdoberfläche als Straßenkarte oder als Luft- bzw. Satellitenbild an.
+
+    Damit Google Maps ihren Dienst vollständig anbieten kann, muss das Unternehmen Daten von Ihnen aufnehmen und speichern.
+    Dazu zählen unter anderem die eingegebenen Suchbegriffe, Ihre IP-Adresse und die Breiten- bzw. Längenkoordinaten. Benutzen Sie die Routenplaner-Funktion wird auch die eingegebene Startadresse gespeichert.
+    Diese Datenspeicherung passiert allerdings auf den Webseiten von Google Maps.
+    Wir können Sie darüber nur informieren, aber keinen Einfluss nehmen.
+    Da wir Google Maps in unsere Website eingebunden haben, setzt Google mindestens ein Cookie (Name: NID) in Ihrem Browser.
+    Dieses Cookie speichert Daten über Ihr Nutzerverhalten.
+    Google nutzt diese Daten in erster Linie, um eigene Dienste zu optimieren und individuelle, personalisierte Werbung für Sie bereitzustellen.
+
+    Folgendes Cookie kann aufgrund der Einbindung von Google Maps in Ihrem Browser gesetzt werden:
+
+    Name: NID
+    Ablaufzeit: nach 6 Monaten
+    Verwendung: NID wird von Google verwendet, um Werbeanzeigen an Ihre Google-Suche anzupassen.
+    Mit Hilfe des Cookies „erinnert“ sich Google an Ihre am häufigsten eingegebenen Suchanfragen oder Ihre frühere Interaktion mit Anzeigen.
+    So bekommen Sie immer maßgeschneiderte Werbeanzeigen. Das Cookie enthält eine einzigartige ID, die Google benutzt, persönliche Einstellungen des Users für Werbezwecke zu sammeln.
+    Beispielwert: 188=h26c1Ktha7fCQTx8rXgLyATyITJ321157892
+    Anmerkung: Wir können bei den Angaben der gespeicherten Daten keine Vollständigkeit gewährleisten. Speziell bei der Verwendung von Cookies sind Veränderungen bei Google nie auszuschließen.
+    Um das Cookie NID zu identifizieren, wurde eine eigene Testseite angelegt, wo ausschließlich Google Maps eingebunden war.
+
+    Die Google-Server stehen in Rechenzentren auf der ganzen Welt.
+    Die meisten Server befinden sich allerdings in Amerika.
+    Aus diesem Grund werden Ihre Daten auch vermehrt in den USA gespeichert.
+    Hier können Sie genau nachlesen wo sich die Google-Rechenzentren befinden:
+    https://www.google.com/about/datacenters/
+
+    Die Daten verteilt Google auf verschiedenen Datenträgern.
+    Dadurch sind die Daten schneller abrufbar und werden vor etwaigen Manipulationsversuchen besser geschützt.
+    Jedes Rechenzentrum hat auch spezielle Notfallprogramme.
+    Wenn es zum Beispiel Probleme bei der Google-Hardware gibt oder eine Naturkatastrophe die Server beeinträchtigt, bleiben die Daten mit hoher Wahrscheinlichkeit dennoch geschützt.
+
+    Manche Daten speichert Google für einen festgelegten Zeitraum.
+    Bei anderen Daten bietet Google lediglich die Möglichkeit, diese manuell zu löschen.
+    Weiters anonymisiert das Unternehmen auch Informationen (wie zum Beispiel Werbedaten) in Serverprotokollen, indem sie einen Teil der IP-Adresse und Cookie-Informationen nach 9 bzw.18 Monaten löschen.
+
+    Mit der 2019 eingeführten automatischen Löschfunktion von Standort- und Aktivitätsdaten
+    werden Informationen zur Standortbestimmung und Web-/App-Aktivität – abhängig von Ihrer Entscheidung – entweder 3 oder 18 Monate gespeichert und dann gelöscht.
+    Zudem kann man diese Daten über ein eigenes Google-Konto auch jederzeit manuell aus dem Verlauf löschen.
+    Wenn Sie Ihre Standorterfassung vollständig verhindern wollen, müssen Sie im Google-Konto die Rubrik „Web- und App-Aktivität“ pausieren.
+    Klicken Sie „Daten und Personalisierung“ und dann auf die Option „Aktivitätseinstellung“.
+    Hier können Sie die Aktivitäten ein- bzw. ausschalten.
+
+    <h1>Google Firebase Datenschutzerklärung</h1>
+    Unsere Apps nutzen Technologie von Google Firebase (Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA, „Google“).
+    Firebase ist Teil der Google Cloud Platform und bietet für Entwickler zahlreiche Dienste an.
+    Eine Auflistung dazu finden Sie hier: https://firebase.google.com/terms/. Einige Firebase Dienste verarbeiten personenbezogene Daten.
+    In den meisten Fällen beschränken sich die personenbezogene Daten auf sogenannte "Instance IDs", die mit einem Zeitstempel versehen sind.
+    Diese von Firebase vergebenen "Instance IDs" sind einzigartig und erlauben damit das Verknüpfen von unterschiedlichen Geschehnissen oder Abläufen.
+    Diese Daten stellen für uns weder persönlich identifizierbaren Informationen dar noch unternehmen wir Anstrengungen diese nachträglich zu personalisieren.
+    Wir verarbeiten diese zusammengefassten Daten zur Analyse und Optimierung des Nutzungsverhaltens, wie beispielsweise durch die Auswertung von Absturzberichten.
+
+    Für Firebase Analytics nutzt Google neben der oben beschriebenen "Instance ID" auch die Werbe-ID des Endgerätes.
+    In den Geräteeinstellungen Ihres Mobilgerätes können Sie die Nutzung der Werbe-ID beschränken.
+    Für Android: Einstellungen > Google > Anzeigen > Werbe-ID zurücksetzen
+    Für iOS: Einstellungen > Datenschutz > Werbung > Kein Ad-Tracking
+
+    Google ist aktiver Teilnehmer beim EU-U.S. Privacy Shield Framework, wodurch der korrekte und sichere Datentransfer persönlicher Daten geregelt wird.
+    Mehr Informationen dazu finden Sie auf https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI.
+    Wenn Sie mehr über die Datenverarbeitung von Google erfahren wollen, empfehlen wir Ihnen die hauseigene Datenschutzerklärung des Unternehmens unter https://policies.google.com/privacy?hl=de.
+
+    <h2>Automatische Datenspeicherung</h2>
+    Wenn Sie heutzutage Webseiten besuchen, werden gewisse Informationen automatisch erstellt und gespeichert, so auch auf dieser Webseite.
+
+    Wenn Sie unsere Webseite so wie jetzt gerade besuchen, speichert unser Webserver (Computer auf dem diese Webseite gespeichert ist) automatisch Daten wie
+
+    die Adresse (URL) der aufgerufenen Webseite
+    Browser und Browserversion
+    das verwendete Betriebssystem
+    die Adresse (URL) der zuvor besuchten Seite (Referrer URL)
+    den Hostname und die IP-Adresse des Geräts von welchem aus zugegriffen wird
+    Datum und Uhrzeit
+    in Dateien (Webserver-Logfiles).
+
+    In der Regel werden Webserver-Logfiles zwei Wochen gespeichert und danach automatisch gelöscht.
+
+    <h2>Speicherung von Daten auf Ihrem Endgerät</h2>
+    Durch die Nutzung dieser Webseite werden bestimmte daten auf Ihrem Endgerät gespeichert,
+    zu einen, um die Zugriffszeiten auf Inhalte zu verkürzen zum anderen,
+    um die gegenwärtige und zukünftige Servicequalität für Sie zu verbessern.
+
+    Dabei kommen Technologien wie Caching LocalStorage und ServiceWorkers zum Einsatz,
+    um den Kommunikationsaufwand zwischen dem Server und Ihrem Endgerät zu reduzieren.
+
+    <h2>Entfernen von Daten & Cookies</h2>
+    In Ihrem Browser können Sie weiters auch einzelne Cookies deaktivieren, löschen oder verwalten.
+    Je nach dem welchen Browser Sie verwenden, funktioniert dies auf unterschiedliche Art und Weise.
+
+    Falls Sie grundsätzlich keine Cookies haben wollen, sollten Sie Ihren Browser so einrichten, dass er Sie immer informiert, wenn ein Cookie gesetzt werden soll.
+    So können Sie bei jedem einzelnen Cookie entscheiden, ob Sie es erlauben oder nicht.
+  </pre>
+  </div>
+
+  <div id="app__slidein_menu" class="hidden">
+    <div class="slidein__header">
+      <img src="assets/pccr.png" alt="pccr_logo">
+    </div>
+    <div class="slidein__content">
+
+      <button id="btn__language" lang="de">
+        <img src="assets/en.png" alt="en">
+      </button>
+
+
+        <dash-item class="dash--item">
+          <div class="dash-item__content">
+            <!-- Holds logo of page type (add star for cube) or room -->
+            <div class="dash-item__language">
+              <img src="assets/de.png" alt="de">
+            </div>
+            <!-- Holds Page Title String -->
+            <div class="dash-item__caption">Appname</div>
+            <div class="dash-item__audience">
+              <i class="fas fa-user"></i>
+            </div>
+
+            <div class="dash-item__type">
+              <i class="fas fa-binoculars"></i>
+            </div>
+
+            <div class="dash-item__pages">S</div>
+          </div>
+        </dash-item>
+        <dash-item class="dash--item">
+          <div class="dash-item__content">
+            <!-- Holds logo of page type (add star for cube) or room -->
+            <div class="dash-item">1</div>
+            <div class="dash-item">2</div>
+            <div class="dash-item">3</div>
+            <div class="dash-item">4</div>
+            <div class="dash-item">5</div>
+          </div>
+        </dash-item>
+<div class="">
+
+
+        <div class="description__content de">
+          <h3>Beschreibung</h3>
+          <br>
+          1 - Die Sprache der App.
+          <br>
+          2 - Der Name der App.
+          <br>
+          3 - Die Zielgruppe der App:
+          <ul>
+            <li><i class="fas fa-user"></i> - Erwachsene</li>
+            <li><i class="fas fa-user-graduate"></i> - Schüler</li>
+            <li><i class="fas fa-child"></i> - Kinder</li>
+            <li><i class="fas fa-dot-circle"></i> - Allgemein</li>
+          </ul>
+          4 - Die Art der App:
+          <ul>
+            <li><i class="fas fa-binoculars"></i> - Tour</li>
+            <li><i class="fas fa-map-signs"></i> - Entdecken</li>
+          </ul>
+          5 - Der Umfang der App:
+          <ul>
+            <li>S - Geringer Umfang</li>
+            <li>M - Mittlerer Umfang</li>
+            <li>L - Grosser Umfang</li>
+          </ul>
+        </div>
+        <div class="description__content en hidden">
+          <h3>Description</h3>
+          <br>
+          1 - The App Language.
+          <br>
+          2 - The App Name.
+          <br>
+          3 - The App Audience:
+          <ul>
+            <li><i class="fas fa-user"></i> - Adults</li>
+            <li><i class="fas fa-user-graduate"></i> - Students</li>
+            <li><i class="fas fa-child"></i> - Children</li>
+            <li><i class="fas fa-dot-circle"></i> - General</li>
+          </ul>
+          4 - The App Type:
+          <ul>
+            <li><i class="fas fa-binoculars"></i> - Guide</li>
+            <li><i class="fas fa-map-signs"></i> - Explore</li>
+          </ul>
+          5 - The App Content:
+          <ul>
+            <li>S - Little content</li>
+            <li>M - Medium content</li>
+            <li>L - Massive content</li>
+          </ul>
+        </div>
+      </div>
+
+      <button id="btn__close_menu">Menü verlassen</button>
+    </div>
+
+  </div>
+</body>
+<script src="list-script.js "></script>
+
+</html>

@@ -1,0 +1,27 @@
+/* kss documentation */
+// Navigation Card
+//
+// The NavigationCard is a top level element to guide the user to the corresponding screen.
+//
+// It can be directily interacted with.
+//
+// <h1>Data</h1>
+// The data for elements that have the ".__string" class is pulled from the general resource file.
+//
+// The card possesses fields to display the following information:
+//
+//  element                     | description
+//  ----------------------------| ---------------
+// {.card__icon-box} | An icon representing the screen.
+// {.card__title}    | The title of the screen.
+// {.card__text}     | Short text to describe the target screen.
+//
+// The outer container has class {.btn .card .card--square}.
+//
+// Markup: ./templates/nav-card.html
+//
+// Style Guide: card.NavCard
+/* /END/  */
+
+* {
+}

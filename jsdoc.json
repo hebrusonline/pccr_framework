@@ -1,0 +1,60 @@
+{
+  "templates": {
+    "applicationName": "Home",
+    "meta": {
+      "title": "API Documentation",
+      "description": "",
+      "keyword": ""
+    }
+  },
+  "opts": {
+    "title": "Title",
+    "template": "node_modules/@pixi/jsdoc-template",
+    "encoding": "utf8",
+    "destination": "documentation/",
+    "private": "true"
+  },
+  "source": {
+    "include": [
+      "app-client/analytics.js",
+        "app-client/list-script.js",
+        "app-client/script.js",
+        "app-client/sw_cache_pages.js",
+
+      "app-framework/app-editor/app-editor.js",
+      "app-framework/app-editor/editor-page.class.js",
+      "app-framework/app-editor/page-item.class.js",
+
+      "app-framework/area-editor/area-editor.js",
+      "app-framework/quiz-editor/quiz-editor.js",
+
+      "app-framework/cards/elements/page-card.class.js",
+
+      "app-framework/dashboard/dashboard.js",
+        "app-framework/dashboard/dash-item.class.js",
+
+      "app-framework/forms/basicFormElement.class.js",
+        "app-framework/forms/elements/boolean-input.class.js",
+        "app-framework/forms/elements/date-input.class.js",
+        "app-framework/forms/elements/file-input.class.js",
+        "app-framework/forms/elements/location-input.class.js",
+        "app-framework/forms/elements/number-input.class.js",
+        "app-framework/forms/elements/string-input.class.js",
+        "app-framework/forms/elements/text-input.class.js",
+        "app-framework/forms/elements/time-input.class.js",
+
+      "app-framework/util/scripts/click.util.js",
+      "app-framework/util/scripts/data.util.js",
+      "app-framework/util/scripts/drag-list.util.js",
+      "app-framework/util/scripts/glossary.util.js",
+      "app-framework/util/scripts/language.util.js",
+
+      "app-framework/util/scripts/preview-phone.util.js",
+        "app-framework/preview-phone/preview-phone.class.js",
+
+      "app-framework/util/scripts/ui.util.js",
+
+      "app-framework/README.md"
+    ]
+  }
+}

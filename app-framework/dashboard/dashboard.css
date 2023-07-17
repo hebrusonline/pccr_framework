@@ -1,0 +1,132 @@
+#dash-box {
+  position: relative;
+  text-align: center;
+}
+
+.dashboard__header {
+  font-size: 1.5em;
+  font-weight: 200;
+}
+
+#dash-list,
+.app-list {
+  list-style: none;
+  position: relative;
+  margin-left: 5%;
+  padding: 0px;
+
+  text-align: center;
+
+  height: 90%;
+  width: 90%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: gray;
+}
+
+#dash-list > dash-item,
+.app-list > dash-item {
+  display: list-item;
+  margin-left: 2.5%;
+  margin-top: 0.1%;
+  padding: 0px;
+  height: 50px;
+  width: 95%;
+  user-select: none;
+  background: none;
+}
+
+.dash-item__content {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 5% 20% 10% 10% 10% 5% 35% 5%;
+  align-items: center;
+  justify-items: center;
+  background: lightgray;
+
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.dash-item__content > .dash-item__logo {
+  background: none;
+}
+
+.dash-item__content > .dash-item__logo img {
+  background: none;
+  height: 100%;
+  width: 75%;
+  object-fit: contain;
+}
+
+.dash-item__content > .dash-item__caption {
+  background: none;
+}
+
+.dash-item__content > .dash-item__audience {
+  background: none;
+}
+
+.dash-item__content > .dash-item__type {
+  background: none;
+}
+
+.dash-item__content > .dash-item__pages {
+  background: none;
+}
+
+.dash-item__content > .dash-item__date {
+  background: none;
+}
+
+.dash-item__content > .buttons {
+  background: none;
+}
+
+#dash__stats {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: lightgray;
+  top: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.btn[disabled] {
+  cursor: not-allowed;
+  background: gray;
+  color: white;
+}
+
+.stat-grid {
+  display: grid;
+  grid-auto-flow: column;
+  background: lightgray;
+  width: 100%;
+  grid-template-columns: 50% 50%;
+}
+
+.weekdays,
+.page-type,
+.times,
+.app-pages {
+  width: 90%;
+  margin: 5%;
+}
+
+.google-visualization-tooltip {
+  width: 150px;
+  background: lightgray;
+}
+
+.btn-dash-delete {
+  background: red;
+  color: white;
+}

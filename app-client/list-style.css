@@ -1,0 +1,237 @@
+/* General Styles */
+:root{
+
+  --font-colour-dark: white;
+  --font-colour-light: black;
+
+  --background-colour: lightgray;
+  --header-colour: gray;
+  --shadow-colour: darkgray;
+  --inactive-colour: darkgray;
+
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Verdana, "Lucida Sans Unicode", sans-serif;
+}
+
+#app__content{
+  background: var(--background-colour);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: 10% 80% 10%;
+}
+
+
+/* ==GENERAL================================================================= */
+#app__header {
+  background: linear-gradient(black 1%, var(--header-colour) 10%);
+  color: var(--font-colour-dark);
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 10% 80% 10%;
+  align-items: center;
+  justify-items: center;
+
+  box-shadow: 0 2px 5px var(--shadow-colour);
+}
+
+#app__header img{
+  height: 10vh;
+  width: 100%;
+  object-fit: contain;
+}
+
+#app__body{
+  display: grid;
+  grid-auto-flow: row;
+  align-items: center;
+  justify-items: center;
+}
+
+#app__body>img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+#app__footer{
+  background: linear-gradient(var(--header-colour) 90%, black);
+  color: var(--font-colour-dark);
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 80% 20%;
+  align-items: center;
+  justify-items: center;
+
+  border-radius: 250% 250% 0 0 /100%;
+  box-shadow: 0 -2px 5px var(--shadow-colour);
+}
+
+#app__footer img{
+  height: 7vh;
+  width: 100%;
+  object-fit: contain;
+}
+/* ==/GENERAL================================================================ */
+
+/* ==LIST==================================================================== */
+#app-list {
+  list-style: none;
+  position: relative;
+
+  padding: 0px;
+
+  text-align: center;
+
+  height: 90%;
+  width: 90%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: gray;
+}
+
+#app-list>dash-item {
+  display: list-item;
+  margin-left: 2.5%;
+  margin-top: 1%;
+  padding: 0px;
+  height: 50px;
+  width: 95%;
+  user-select: none;
+}
+
+dash-item img{
+  height: 75%;
+  width: 75%;
+  object-fit: contain;
+}
+
+.dash-item__content {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 10% 60% 10% 10% 10%;
+  align-items: center;
+  justify-items: center;
+  background: lightgray;
+
+  border: 1px solid black;
+  border-radius: 5px;
+}
+/* ==/LIST=================================================================== */
+
+/* ==MENU==================================================================== */
+#app__slidein_menu{
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  transition: 1s;
+  top:0;
+  left: 0;
+}
+
+.slidein__header{
+  height: 20%;
+  width: 85%;
+  background: #000000AA;
+}
+
+.slidein__header img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.slidein__content{
+  height: 80%;
+  width: 85%;
+  padding: 1%;
+  background: white;
+  display: grid;
+  grid-template-rows: 10% 10% 5% 70% 5%;
+
+}
+
+.slidein__content .dash-item__content,
+.slidein__content .description__content{
+  height: 90%;
+  width: 90%;
+  margin: 1% 1% 1% 5%;
+
+}
+
+.slidein__content .description__content{
+  line-height: 1.2em;
+}
+
+.slidein__content .description__content ul{
+  margin-left: 20%;
+}
+
+.hidden{
+  left: -100% !important;
+  visibility: hidden;
+}
+
+.description__content.hidden{
+  display: none;
+}
+
+
+#btn__language{
+  width: 20%;
+  height: 90%;
+  margin-left: 40%;
+}
+
+#btn__language img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+#btn__close_menu{
+  width: 40%;
+  height: 90%;
+  margin-left: 30%;
+}
+/* ==/MENU=================================================================== */
+.nav__icon{
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  font-size: calc(4vmin + 1.5em);
+  width: 100%;
+  height: 100%;
+}
+
+.nav__icon.active{
+color: darkgray;
+}
+
+#imprint_box{
+  position: absolute;
+  top: 12%;
+  height: 75%;
+  left: 5%;
+  width: 90%;
+  background: magenta;
+  border: 1px solid black;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+  overflow-y: scroll;
+}
+
+#imprint_box>pre{
+  white-space: pre-wrap;
+}

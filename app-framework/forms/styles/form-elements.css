@@ -1,0 +1,83 @@
+/* kss documentation */
+
+// Input
+//
+// All available input components are described below, from the basic number input to the more complex date input field's structure.
+//
+// Style Guide: input
+/* /END/  */
+
+* {}
+
+/* for a object container */
+
+.pccr-object {
+  background-color: var(--transparent, var(--not-transparent));
+  border: 1px black solid;
+  border-radius: 10px;
+  margin: 1%;
+  padding: .5%;
+}
+
+/*for a data container */
+
+.pccr-data {
+  border: 1px black solid;
+  border-radius: 10px;
+  margin: 1%;
+  padding: .5%;
+}
+
+.form-header {
+  background-color: var(--transparent, var(--not-transparent));
+}
+
+.form-placeholder {
+  grid-area: placeholder;
+  background-color: var(--transparent, var(--not-transparent));
+  font-size: 105%;
+  font-weight: bold;
+}
+
+.form-description {
+  grid-area: description;
+  width: 100%;
+  background-color: beige;
+  border: 1px black solid;
+  border-radius: 10px 0 0 10px;
+  padding: 1%;
+  height: 100%;
+}
+
+.form-constraints {
+  grid-area: constraints;
+  width: 100%;
+  background-color: #feefc;
+  border: 1px black solid;
+  border-radius: 0 10px 10px 0;
+  padding: 1%;
+  height: 100%;
+}
+
+.object-imageContainer {
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 20px;
+  height: 20px;
+  font-size: 180%;
+}
+
+/* utilities */
+
+/* transparent background for fontawesome symbols */
+
+i {
+  background: var(--transparent, var(--not-transparent));
+}
+
+/* show inline */
+
+.inline {
+  display: inline-block;
+  background: var(--transparent, var(--not-transparent));
+}

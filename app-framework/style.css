@@ -1,0 +1,866 @@
+@import url("master-styles.css");
+/*  */
+
+* {
+  box-sizing: border-box;
+  font-family: var(--theme-font);
+  /* dev */
+  /* border: var(--dev-border); */
+}
+
+body {
+  overflow: hidden;
+}
+
+/* Loading Screen */
+
+#login-cover {
+  position: absolute;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 20vh;
+  text-align: center;
+  background: lightgray;
+  z-index: 1000;
+}
+
+/* src: https://www.freecodecamp.org/news/how-to-build-a-delightful-loading-screen-in-5-minutes-847991da509f/ */
+
+.loading__anim {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  border: 10px solid rgba(229, 229, 229, 0.25);
+  border-left-color: rgba(209, 209, 209, 0.5);
+  border-top-color: rgba(155, 155, 155, 1);
+  border-radius: 50%;
+  animation: loadingRotate 1000ms infinite linear;
+}
+
+@keyframes loadingRotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.preview-phone__footer > button {
+  background: white;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+  border: 1px solid black;
+  border-radius: 1%;
+}
+/* TODO */
+#layout-container .small-screen * {
+  border: 1px solid black;
+}
+
+#layout-container .small-screen i {
+  border: none;
+}
+
+#item-interaction-controls .grid {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+}
+
+.btn:focus,
+select {
+  outline-color: black;
+}
+
+.btn.card:focus {
+  outline-color: black;
+  outline-style: solid;
+  outline-width: thick;
+}
+
+.btn.button:focus {
+  outline: none;
+  border-color: black;
+  border-width: 2px;
+}
+
+.btn--page_commit {
+  border: 1px solid black;
+  width: 150px;
+  height: 50px;
+  margin: 20px;
+  float: right;
+}
+
+.editor-controls .btn {
+  border: 1px solid black;
+}
+
+input:focus,
+textarea:focus {
+  outline-color: black;
+  outline-style: solid;
+  outline-width: thick;
+}
+
+/* GENERAL */
+
+.button--icon {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  background: var(--transparent, var(--not-transparent));
+}
+
+.__array {
+  border: 1px solid black;
+  background: var(--transparent, var(--not-transparent));
+}
+
+.label {
+  width: 100%;
+  height: 100%;
+}
+
+.label--line {
+  width: 100%;
+}
+
+.label--centered {
+  text-align: center;
+  line-height: 250px;
+}
+
+/* /GENERAL */
+
+/* HEADER */
+
+.header {
+  width: 100%;
+  min-width: 600px;
+  height: 10%;
+  padding: 1%;
+  display: grid;
+  grid-template-areas: "buttons-left title buttons-right";
+  align-items: center;
+  background: var(--header-colour, var(--default-colour));
+}
+
+.header__buttons-left {
+  grid-area: "buttons-left";
+  justify-self: left;
+  display: grid;
+  grid-auto-flow: column;
+  background: var(--transparent, var(--not-transparent));
+}
+
+.header__center {
+  display: grid;
+  grid-auto-flow: column;
+  background: var(--transparent, var(--not-transparent));
+}
+
+.pccr_logo {
+  height: 50px;
+  justify-self: end;
+  align-self: center;
+  background: var(--transparent, var(--not-transparent));
+}
+
+.header__title {
+  font-size: 150%;
+  grid-area: "title";
+  justify-self: start;
+  align-self: center;
+  background: var(--transparent, var(--not-transparent));
+}
+
+.header__buttons-right {
+  grid-area: "buttons-right";
+  justify-self: right;
+  display: grid;
+  grid-auto-flow: column;
+  background: var(--transparent, var(--not-transparent));
+}
+
+/* FOOTER */
+
+.footer {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 10%;
+  left: 0;
+  bottom: 0;
+  background: var(--footer-colour, var(--default-colour));
+}
+
+/* INFO_PAGE_BOX */
+
+.info-editor-container {
+  width: 100%;
+  height: 80%;
+  position: absolute;
+}
+
+.page-caption {
+  font-size: 150%;
+  margin-left: 2.5%;
+}
+
+.info-editor-container__left,
+.info-editor-container__right {
+  height: 600px;
+  width: 600px;
+  float: left;
+  margin: 0;
+  overflow: hidden;
+  border: 1px lightgray solid;
+  background: lightgray;
+  padding: 0.1%;
+}
+
+.info-editor-container__left {
+  position: relative;
+  top: 50%;
+  left: 25%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.info-editor-container__right {
+  position: relative;
+  top: 50%;
+  left: 75%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.select-container,
+.documentation-container,
+.select-container__choices {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  border-radius: 1%;
+}
+
+.documentation-container {
+  margin-top: 0.25%;
+}
+
+.select-container__choices {
+  position: absolute;
+  padding: 1%;
+  transition: 0.5s;
+  top: -500px;
+}
+
+.select-container__choices.show {
+  top: 0;
+}
+
+#form-container,
+#grid-container,
+#formOutput-container {
+  height: 600px;
+  width: 600px;
+  background: white;
+  position: absolute;
+  top: 0;
+}
+
+#grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+#layoutContainer {
+  height: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(6, 33.3%);
+  align-items: center;
+  column-gap: 1%;
+  overflow-y: auto;
+}
+
+/* #layoutContainer>.small-screen {
+  width: 100%;
+} */
+
+.documentation-container {
+  background: gray;
+}
+
+.layout-container {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: -100%;
+  transition: 0.5s;
+}
+
+.layout-container.show {
+  top: 0;
+}
+
+.interaction-box,
+.instruction-box {
+  position: relative;
+  width: 48%;
+  height: 96%;
+  margin: 1%;
+  float: left;
+  background: rgba(0, 0, 0, 0);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100%);
+  justify-items: center;
+  align-items: center;
+}
+
+#form-container,
+#grid-container {
+  overflow-y: scroll;
+  left: -600px;
+  transition: 0.5s;
+}
+
+#quiz-editor-pane #form-container,
+#quiz-editor-pane #grid-container {
+  left: -100%;
+  width: 100%;
+  height: 100%;
+}
+
+#form-container.show,
+#grid-container.show {
+  left: 0 !important;
+  transition: 0.5s;
+}
+
+#formOutput-container {
+  right: -600px;
+  transition: 0.5s;
+}
+
+#formOutput-container.show {
+  right: 0;
+  transition: 0.5s;
+}
+
+/* /INFO_PAGE_BOX */
+
+input:invalid {
+  color: red !important;
+}
+
+input:valid {
+  color: green !important;
+}
+
+span {
+  background-color: inherit;
+  text-align: center;
+}
+
+/* User Info popup */
+
+#userInfo {
+  position: absolute;
+  display: grid;
+  width: 300px;
+  height: 150px;
+  border: 2px white solid;
+  background: lightgray;
+  right: 90px;
+  top: 75px;
+  z-index: 100;
+  border-radius: 15px;
+}
+
+#userInfo:before {
+  content: "";
+  position: absolute;
+  justify-items: center;
+  left: 262px;
+  bottom: 100%;
+  border: 10px solid transparent;
+  border-bottom-color: gray;
+}
+
+#userInfo:after {
+  content: "";
+  position: absolute;
+  left: 263px;
+  bottom: 100%;
+  border: 9px solid transparent;
+  border-bottom-color: lightgray;
+}
+
+#userInfo > #__string-userHeader,
+#userInfo > #user_name,
+#userInfo > #user_email,
+#userInfo > #user_orga {
+  justify-self: center;
+  align-self: center;
+  background: var(--transparent, var(--not-transparent));
+}
+
+#userInfo > #__string-userHeader {
+  font-size: 1.1em;
+  font-weight: 900;
+}
+
+#pageDropdown {
+  font-size: 1.5em;
+  width: 90%;
+
+  border: 1px solid black;
+  border-radius: 1%;
+}
+
+#interaction-slideIn {
+  position: absolute;
+  right: -300px;
+  height: 100%;
+  width: 100%;
+  padding: 1%;
+  transition: 1s;
+}
+
+#instruction-slideIn {
+  position: absolute;
+  left: -300px;
+  height: 100%;
+  width: 100%;
+  padding: 1%;
+  transition: 1s;
+}
+
+#interaction-slideIn.show {
+  right: 0 !important;
+}
+
+#instruction-slideIn.show {
+  left: 0 !important;
+}
+
+.main-container {
+  width: 100%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 33%);
+  justify-items: center;
+  align-items: center;
+}
+
+.main-container1 {
+  width: 100%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100%);
+  justify-items: center;
+  align-items: center;
+}
+
+.main-container2 {
+  width: 100%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 50%);
+  justify-items: center;
+  align-items: center;
+}
+
+.container--pages {
+  background: gray;
+}
+
+/* CARDS */
+
+.card {
+  padding: 5%;
+  border: 1px solid black;
+  border-radius: 1%;
+  box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.5);
+}
+
+.card--square {
+  height: 230px;
+  width: 230px;
+  cursor: pointer;
+}
+
+.card__icon-box {
+  width: 100%;
+  padding: 1%;
+  text-align: center;
+}
+
+.card__title {
+  padding: 7%;
+  font-size: 1.2em;
+  font-weight: 900;
+  text-align: center;
+}
+
+.card__text {
+  text-align: center;
+}
+
+/* /CARDS */
+
+/* BUTTONS */
+
+.button {
+  border: 1px solid black;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.button--square {
+  width: 80%;
+  height: 80%;
+  margin: 10%;
+}
+
+.button--rectangular {
+  width: 40%;
+  height: 10%;
+  margin-left: 5%;
+}
+
+.button--fullWidth {
+  width: 90%;
+  height: 50%;
+  background: white;
+}
+
+.footer-buttons {
+  position: absolute;
+  background: none;
+  z-index: 100;
+  top: 73.5%;
+  left: 24.5%;
+  width: 50%;
+  height: 5%;
+
+  display: grid;
+  justify-items: center;
+  grid-auto-flow: column;
+}
+.footer-buttons .btn {
+  height: 100%;
+  width: 60%;
+  border-radius: 1%;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#dropdownButtonDelete {
+  background: red;
+  color: white;
+}
+
+#page-select-popup {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  top: -100%;
+  z-index: 1001;
+  background: gray;
+  background: rgba(100, 100, 100, 0.5);
+}
+
+#page-select-popup > .select-popup-content {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 75%;
+  background: grey;
+}
+
+#__string-instructionContent {
+  width: 100%;
+  height: 50%;
+  text-align: center;
+}
+
+/* /BUTTONS */
+
+.editor-page-list {
+  position: absolute;
+  height: 100%;
+  width: 25%;
+  top: 0;
+  padding: 1%;
+  border-right: 1px solid black;
+}
+
+.page_list__header {
+  font-size: 110%;
+  text-align: center;
+  background: none;
+  width: 100%;
+}
+
+#page-list {
+  list-style: none;
+  margin: 0;
+  margin-top: 10%;
+  padding: 1%;
+  height: 85%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: gray;
+}
+
+page-item {
+  display: list-item;
+}
+
+#page-list > li,
+#page-list > page-item {
+  height: 50px;
+  width: 100%;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -webkit-user-drag: element;
+}
+
+.page--item {
+  margin: 0;
+  padding: 1%;
+  background: none;
+}
+
+.page-item__content {
+  height: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 20% 10% 50% 20%;
+  align-items: center;
+  justify-items: center;
+  background: lightgray;
+  cursor: grab;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.page-item__content:active {
+  cursor: grabbing;
+}
+
+.page-item__content > .page-item__logo {
+  background: none;
+}
+
+.page-item__content > .page-item__number,
+.page-item__content > .page-item__number input {
+  width: 35px;
+}
+.page-item__content > .page-item__number input::-webkit-inner-spin-button,
+.page-item__content > .page-item__number input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.page-item__content > .page-item__text {
+  background: none;
+}
+
+.page-item__content > .page-item__close {
+  background: none;
+  cursor: pointer;
+}
+
+.dragStartClass {
+  opacity: 0;
+  transition: all 0.2s ease-out;
+}
+
+/* hover effect for target place in list */
+
+.page--item.over .page-item__content {
+  border-top: thick solid white;
+  background: gray;
+  transition: all 0.2s ease-out;
+}
+
+/* Enables preview screen on hover */
+
+/* src: https://stackoverflow.com/questions/5210033/using-only-css-show-div-on-hover-over-a */
+
+#page-list > .listscreen {
+  display: none;
+}
+
+#page-list .li-content,
+#page-list .li-label {
+  height: 100%;
+  width: 100%;
+  background: none;
+}
+
+#page-list .listscreen {
+  position: absolute;
+  margin-top: var(--listscreen-margin);
+  left: 100%;
+  display: none !important;
+}
+
+#page-list .li-label:hover + .listscreen,
+#page-list .page-item__content:hover + .listscreen {
+  display: block !important;
+}
+
+/* same as editor-page */
+
+.listscreen {
+  background: #f1f1f100;
+  border: 1px solid #d3d3d3 !important;
+  text-align: center;
+  height: 200px;
+  width: 150px;
+  font-size: 75%;
+  z-index: 10;
+}
+
+.btn__commit-app {
+  position: absolute;
+  width: 80%;
+  margin-bottom: 5%;
+  bottom: 0;
+  right: 10%;
+  font-size: 1.1em;
+  background: lime;
+}
+
+.footer {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 25% 50% 25%;
+  justify-items: center;
+  font-size: 150%;
+  align-items: center;
+}
+
+.footer .doku {
+  width: 30%;
+  display: grid;
+  grid-auto-flow: column;
+  padding: 1%;
+  background: none;
+  align-items: center;
+}
+
+.footer .doku a {
+  background: none;
+}
+
+.footer .logo_visit {
+  height: auto;
+  width: 70px;
+  background: none;
+}
+
+.footer .logo_interreg {
+  height: auto;
+  width: 250px;
+  background: none;
+}
+
+.delete-dialog {
+  position: absolute;
+  display: grid;
+
+  align-items: center;
+  justify-items: center;
+  height: 91%;
+  width: 100%;
+  top: 0;
+  margin: -1%;
+  z-index: 101;
+  background: #f9000057;
+}
+
+.delete-dialog .content {
+  background: #fff024;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  height: 50%;
+  width: 75%;
+  border-radius: 15px;
+  box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.5);
+}
+
+.btn.alert {
+  background: red;
+  color: white;
+}
+
+/* JSON Syntax highlights */
+
+pre .string {
+  color: green;
+}
+
+pre .number {
+  color: darkorange;
+}
+
+pre .boolean {
+  color: blue;
+}
+
+pre .null {
+  color: magenta;
+}
+
+pre .key {
+  color: red;
+}
+
+#btn__close_stats {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1%;
+}
+
+/* @MEDIA: Portrait */
+
+@media screen and (orientation: portrait) {
+  .info-editor-container {
+    width: 100%;
+    overflow-x: hidden;
+    min-width: 700px;
+    display: grid;
+    justify-items: center;
+  }
+  .info-editor-container__left,
+  .info-editor-container__right {
+    transform: none;
+    left: inherit;
+    top: inherit;
+    float: none;
+    overflow: hidden;
+    margin: 5%;
+  }
+}

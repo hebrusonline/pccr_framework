@@ -1,0 +1,18 @@
+{
+  "title": "App Framework Components",
+  "homepage": "../pccr_login/KSS-HOME.md",
+  "builder": "node_modules/niepsuj-kss-template/",
+  "//": "The source and destination paths are relative to this file.",
+  "source": [
+    "./app-framework/forms",
+    "./app-framework/preview-phone",
+    "./app-framework/cards",
+    "./app-framework/util/style",
+    "./app-framework/util/docu/"
+  ],
+  "destination": "styleguide/",
+
+  "//": "The css and js paths are URLs relative to the generated style guide.",
+  "css": ["../kss-styles.css"],
+  "js" : ["../kss-script.js"]
+}
